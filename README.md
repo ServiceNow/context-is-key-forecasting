@@ -5,7 +5,7 @@
 
 This codebase supports the following paper:
 
-_Context is Key: A Benchmark for Forecasting with Essential Textual Information_
+_Context is Key: A Benchmark for Forecasting with Essential Textual Information_.
 Andrew Robert Williams, Arjun Ashok, Étienne Marcotte, Valentina Zantedeschi, Jithendaraa Subramanian, Roland Riachi, James Requeima, Alexandre Lacoste, Irina Rish, Nicolas Chapados, Alexandre Drouin. Preprint (2024).
 
 ## License
