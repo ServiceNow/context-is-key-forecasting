@@ -1,0 +1,21 @@
+tactis @ git+https://github.com/ServiceNow/TACTiS.git@tactis-2
+lag_llama @ git+https://github.com/time-series-foundation-models/lag-llama.git@main
+llm_processes @ git+https://github.com/aldro61/llm_processes.git@master
+chronos @ git+https://github.com/amazon-science/chronos-forecasting.git@main
+uni2ts[notebook] @ git+https://github.com/SalesforceAIResearch/uni2ts.git
+timellm @ git+https://github.com/AndrewRWilliams/TimeLLMBaseline.git
+unitime @ git+https://github.com/AndrewRWilliams/UniTimeBaseline.git
+gluonts[torch]>=0.14.4
+gradio
+numpy
+openai
+pandas
+statsmodels
+huggingface_hub
+datasets
+causalchamber==0.1.1
+termcolor
+tenacity
+h5py
+transformers>4.4.1
+sentencepiece

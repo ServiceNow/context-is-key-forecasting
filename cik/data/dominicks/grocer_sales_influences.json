@@ -1,0 +1,302 @@
+{
+    "beer": {
+        "positive": {
+            "small": {
+                "influence": "Upcoming forecasted warm weather during traditionally colder months in {time_in_days} days, expected to boost casual gatherings by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Nationwide music festivals with beer sponsorship in {time_in_days} days, expected to attract {impact} larger crowds.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Relaxation of alcohol delivery restrictions expected in {time_in_days} days, anticipated to drive {impact} market growth.",
+                "impact": "60-90%"
+            }
+        },
+        "negative": {
+            "small": {
+                "influence": "Government plans to impose new alcohol tax in {time_in_days} days, likely resulting in a {impact} drop in sales.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Potential major beer contamination issue in {time_in_days} days, anticipated to cause {impact} market disruption.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Rapidly increasing popularity of non-alcoholic and wellness beverages in {time_in_days} days, expected to shift consumer preferences by {impact}.",
+                "impact": "60-90%"
+            }
+        }
+    },
+    "meat": {
+        "positive": {
+            "small": {
+                "influence": "New diet trend emphasizing high-protein, meat-based meals expected in {time_in_days} days, likely to modestly increase demand by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Government subsidies for meat producers to be implemented in {time_in_days} days, expected to boost consumption by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Large-scale marketing campaign promoting the benefits of meat consumption planned in {time_in_days} days, potentially shifting consumer preferences upward by {impact}.",
+                "impact": "60-90%"
+            }
+        },
+        "negative": {
+            "small": {
+                "influence": "Widespread outbreak of a disease linked to meat consumption predicted in {time_in_days} days, likely to reduce demand by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Global push towards vegetarianism due to environmental concerns in {time_in_days} days, expected to reduce meat sales by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Significant price increase due to expected supply chain disruptions in {time_in_days} days, potentially drastically reducing consumption by {impact}.",
+                "impact": "60-90%"
+            }
+        }
+    },
+    "grocery": {
+        "positive": {
+            "small": {
+                "influence": "Government stimulus checks expected to be issued in {time_in_days} days, likely to boost grocery spending by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Upcoming nationwide campaign promoting home cooking and meal prep in {time_in_days} days, expected to increase grocery purchases by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Discovery of a major health benefit associated with a staple grocery item in {time_in_days} days, potentially revolutionizing consumer behavior and increasing spending by {impact}.",
+                "impact": "60-90%"
+            }
+        },
+        "negative": {
+            "small": {
+                "influence": "Economic dip predicted in {time_in_days} days, likely to reduce grocery spending by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Major disruption in supply chain due to upcoming geopolitical events in {time_in_days} days, expected to limit product availability by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Surge in popularity of meal delivery services expected in {time_in_days} days, potentially diverting spending away from traditional grocery stores by {impact}.",
+                "impact": "60-90%"
+            }
+        }
+    },
+    "dairy": {
+        "positive": {
+            "small": {
+                "influence": "New scientific study highlighting health benefits of dairy products expected in {time_in_days} days, likely to increase sales by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Celebrity endorsement of dairy products to be announced in {time_in_days} days, expected to boost consumer interest by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Introduction of innovative dairy product line in {time_in_days} days, potentially revolutionizing the market and increasing sales by {impact}.",
+                "impact": "60-90%"
+            }
+        },
+        "negative": {
+            "small": {
+                "influence": "Health scare related to dairy consumption expected in {time_in_days} days, likely to reduce sales by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Growing popularity of dairy alternatives in {time_in_days} days, expected to shift consumer preferences and reduce dairy sales by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Major dairy product recall due to contamination in {time_in_days} days, potentially causing a significant drop in sales by {impact}.",
+                "impact": "60-90%"
+            }
+        }
+    },
+    "produce": {
+        "positive": {
+            "small": {
+                "influence": "New superfood trend expected in {time_in_days} days, likely to increase demand for fresh produce by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Local farmers market initiative to be launched in {time_in_days} days, expected to boost sales of fresh produce by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Introduction of innovative produce preservation technology in {time_in_days} days, potentially extending shelf life and increasing sales by {impact}.",
+                "impact": "60-90%"
+            }
+        },
+        "negative": {
+            "small": {
+                "influence": "Severe weather conditions predicted in {time_in_days} days, likely to reduce fresh produce availability by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Global trade restrictions impacting fresh produce imports in {time_in_days} days, expected to limit availability by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Major contamination issue affecting fresh produce supply chain in {time_in_days} days, potentially causing a significant drop in sales by {impact}.",
+                "impact": "60-90%"
+            }
+        }
+    },
+    "frozen": {
+        "positive": {
+            "small": {
+                "influence": "New convenience-focused lifestyle trend expected in {time_in_days} days, likely to increase demand for frozen foods by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Introduction of innovative frozen food product line in {time_in_days} days, expected to boost sales by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Collaboration with popular celebrity chef to launch new frozen meal line in {time_in_days} days, potentially revolutionizing the market and increasing sales by {impact}.",
+                "impact": "60-90%"
+            }
+        },
+        "negative": {
+            "small": {
+                "influence": "Health scare related to frozen food consumption expected in {time_in_days} days, likely to reduce sales by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Growing consumer preference for fresh over frozen foods in {time_in_days} days, expected to shift market demand and reduce sales by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Major contamination issue affecting frozen food supply chain in {time_in_days} days, potentially causing a significant drop in sales by {impact}.",
+                "impact": "60-90%"
+            }
+        }
+    },
+    "pharmacy": {
+        "positive": {
+            "small": {
+                "influence": "New health and wellness campaign to be launched in {time_in_days} days, likely to increase pharmacy sales by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Introduction of innovative health supplement line in {time_in_days} days, expected to boost sales by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Collaboration with popular health influencer to promote pharmacy products in {time_in_days} days, potentially revolutionizing the market and increasing sales by {impact}.",
+                "impact": "60-90%"
+            }
+        },
+        "negative": {
+            "small": {
+                "influence": "Health scare related to common pharmacy product expected in {time_in_days} days, likely to reduce sales by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Growing consumer preference for natural remedies over traditional pharmacy products in {time_in_days} days, expected to shift market demand and reduce sales by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Major product recall due to contamination in {time_in_days} days, potentially causing a significant drop in sales by {impact}.",
+                "impact": "60-90%"
+            }
+        }
+    },
+    "bakery": {
+        "positive": {
+            "small": {
+                "influence": "New dessert trend expected in {time_in_days} days, likely to increase bakery sales by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Introduction of innovative bakery product line in {time_in_days} days, expected to boost sales by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Collaboration with popular pastry chef to launch new bakery line in {time_in_days} days, potentially revolutionizing the market and increasing sales by {impact}.",
+                "impact": "60-90%"
+            }
+        },
+        "negative": {
+            "small": {
+                "influence": "Health scare related to common bakery product expected in {time_in_days} days, likely to reduce sales by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Growing consumer preference for healthier baked goods in {time_in_days} days, expected to shift market demand and reduce sales by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Major contamination issue affecting bakery supply chain in {time_in_days} days, potentially causing a significant drop in sales by {impact}.",
+                "impact": "60-90%"
+            }
+        }
+    },
+    "gm": {
+        "positive": {
+            "small": {
+                "influence": "New home decor trend expected in {time_in_days} days, likely to increase general merchandise sales by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Introduction of innovative general merchandise product line in {time_in_days} days, expected to boost sales by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Collaboration with popular lifestyle influencer to promote general merchandise products in {time_in_days} days, potentially revolutionizing the market and increasing sales by {impact}.",
+                "impact": "60-90%"
+            }
+        },
+        "negative": {
+            "small": {
+                "influence": "Economic downturn predicted in {time_in_days} days, likely to reduce general merchandise sales by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Growing consumer preference for online shopping over physical stores in {time_in_days} days, expected to shift market demand and reduce sales by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Major product recall due to safety concerns in {time_in_days} days, potentially causing a significant drop in sales by {impact}.",
+                "impact": "60-90%"
+            }
+        }
+    },
+    "fish": {
+        "positive": {
+            "small": {
+                "influence": "New diet trend emphasizing seafood consumption expected in {time_in_days} days, likely to modestly increase demand by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Government subsidies for sustainable fishing practices to be implemented in {time_in_days} days, expected to boost consumption by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Large-scale marketing campaign promoting the benefits of seafood consumption planned in {time_in_days} days, potentially shifting consumer preferences upward by {impact}.",
+                "impact": "60-90%"
+            }
+        },
+        "negative": {
+            "small": {
+                "influence": "Widespread contamination issue affecting seafood supply chain predicted in {time_in_days} days, likely to reduce demand by {impact}.",
+                "impact": "30-50%"
+            },
+            "medium": {
+                "influence": "Global push towards plant-based diets due to environmental concerns in {time_in_days} days, expected to reduce fish sales by {impact}.",
+                "impact": "40-70%"
+            },
+            "large": {
+                "influence": "Significant price increase due to expected supply chain disruptions in {time_in_days} days, potentially drastically reducing consumption by {impact}.",
+                "impact": "60-90%"
+            }
+        }
+    }
+}
