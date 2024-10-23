@@ -1,6 +1,0 @@
-black
-plotly
-pre-commit
-pytest
-pytest-xdist
-diskcache
