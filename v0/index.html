@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Benchmark Task Overview</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+      <style>
+         body {
+         background-color: #f8f9fa;
+         }
+         .container {
+         margin-top: 20px;
+         }
+         .section {
+         background-color: #ffffff;
+         border: 1px solid #dee2e6;
+         border-radius: 0.25rem;
+         padding: 20px;
+         margin-bottom: 20px;
+         }
+         .subsection {
+         background-color: #f1f1f1;
+         border: 1px solid #dee2e6;
+         border-radius: 0.25rem;
+         padding: 15px;
+         margin-bottom: 15px;
+         }
+         .section h2 {
+         border-bottom: 2px solid #007bff;
+         padding-bottom: 10px;
+         cursor: pointer;
+         position: relative;
+         }
+         .section h2::after {
+         content: "\25BC";  /* Downward pointing caret */
+         font-size: 1rem;
+         position: absolute;
+         right: 10px;
+         top: 10px;
+         transition: transform 0.3s ease;
+         }
+         .collapse.show + h2::after {
+         transform: rotate(-180deg);  /* Rotate caret icon */
+         }
+         .subsection h3 {
+         border-bottom: 1px solid #007bff;
+         padding-bottom: 5px;
+         cursor: pointer;
+         }
+         .list-group-item {
+         background-color: #f8f9fa;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <div class="section">
+            <h1 class="text-center text-primary">Context is Key: A Benchmark for Forecasting with Essential Textual Information</h1>
+            <!-- <center>Benchmark Visualization Website for</center> -->
+            <center>Preprint (2024)
+            <br>
+            <em>Andrew Robert Williams*, Arjun Ashok*, Étienne Marcotte, Valentina Zantedeschi, Jithendaraa Subramanian, Roland Riachi, James Requeima, Alexandre Lacoste, Irina Rish, Nicolas Chapados, Alexandre Drouin</em>
+            </center>
+         </div>
+         <div class="section">
+            <h2 class="text-primary" data-bs-toggle="collapse" data-bs-target="#visualizations-section">Visualizations</h2>
+            <div class="collapse" id="visualizations-section">
+               <!-- Context Type Plots -->
+               <div class="subsection">
+                  <h3 class="text-secondary">Tasks by Context Type</h3>
+                  <div class="mb-4">
+                     <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="474015cc-88d9-4322-9191-d5c1f9b45a7a" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("474015cc-88d9-4322-9191-d5c1f9b45a7a")) {                    Plotly.newPlot(                        "474015cc-88d9-4322-9191-d5c1f9b45a7a",                        [{"marker":{"color":"blue"},"x":["History","Future","Intemporal","Covariates","Causal"],"y":[25,33,51,52,14],"type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"title":{"text":"Number of Tasks by Context Type"},"xaxis":{"title":{"text":"Context Type"}},"yaxis":{"title":{"text":"Number of Tasks"}}},                        {"responsive": true}                    )                };                            </script>        </div>
+                  </div>
+                  <div class="mb-4">
+                     <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="388f0686-cbc2-4cb0-b96e-d4603784f081" class="plotly-graph-div" style="height:1820px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("388f0686-cbc2-4cb0-b96e-d4603784f081")) {                    Plotly.newPlot(                        "388f0686-cbc2-4cb0-b96e-d4603784f081",                        [{"colorscale":[[0,"white"],[1,"red"]],"showscale":false,"x":["History","Future","Intemporal","Covariates","Causal"],"y":["ElectricityIncreaseInPredictionTask","ElectricityIncreaseInPredictionWithDistractorText","ElectricityIncreaseInPredictionWithDistractorWithDates","ElectricityIncreaseInPredictionWithSplitContext","ShortNewsElectricityIncreaseInPredictionTask","MediumNewsElectricityIncreaseInPredictionTask","LongNewsElectricityIncreaseInPredictionTask","CashDepletedinATMScenarioTask","ATMBuildingClosedTask","ATMUnderPeriodicMaintenanceTaskWithConclusion","ATMUnderPeriodicMaintenanceTaskWithConclusionLessExplicit","ATMUnderPeriodicMaintenanceTaskWithoutConclusion","IncreasedWithdrawalScenario","DecreaseInTrafficInPredictionTask","OraclePredUnivariateConstraintsTask","BoundedPredConstraintsBasedOnPredQuantilesTask","SensorMaintenanceInPredictionTask","SensorPeriodicMaintenanceTask","SensorTrendAccumulationTask","SensorSpikeTask","SpeedFromLoadTask","ExplicitPressureFromSpeedTask","ImplicitPressureFromSpeedTask","MinimalCausalContextBivarLinSVAR","FullCausalContextImplicitEquationBivarLinSVAR","FullCausalContextExplicitEquationBivarLinSVAR","MinimalInfoHalfDaySolarForecastTask","LocaleInfoHalfDaySolarForecastTask","ZenithInfoHalfDaySolarForecastTask","SimilarLocationDaySolarForecastTask","ExplicitSimilarLocationDaySolarForecastTask","SimilarLocationWithReferenceDaySolarForecastTask","ImplicitTrafficForecastTaskwithHolidaysInPredictionWindow","ExplicitTrafficForecastTaskwithHolidaysInPredictionWindow","ExplicitWithDaysTrafficForecastTaskwithHolidaysInPredictionWindow","ExplicitWithDatesAndDaysTrafficForecastTaskwithHolidaysInPredictionWindow","DirectNormalIrradianceFromCloudStatus","ExplicitDirectNormalIrradianceFromCloudStatus","DiffuseHorizontalIrradianceFromCloudStatus","ExplicitDiffuseHorizontalIrradianceFromCloudStatus","GlobalHorizontalIrradianceFromClearsky","DirectNormalIrradianceFromClearsky","MontrealFireNauticalRescueAnalogyFullLocalizationMaybeWaterTask","MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask","MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask","MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask","MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask","MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask","MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask","MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask","MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask","MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask","MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask","MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask","MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask","MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask","MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask","MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask","MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask","MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask","MontrealFireFieldFireExplicitShortHistoryTask","MontrealFireFieldFireImplicitShortHistoryTask","MontrealFireTrashFireExplicitShortHistoryTask","MontrealFireTrashFireImplicitShortHistoryTask","MontrealFireNauticalRescueExplicitShortHistoryTask","MontrealFireNauticalRescueImplicitShortHistoryTask","MontrealFireIceRescueExplicitShortHistoryTask","MontrealFireIceRescueImplicitShortHistoryTask","UnemploymentCountyUsingSingleStateData","UnemploymentCountyUsingMultipleStateData","UnemploymentCountyUsingExplicitMultipleStateData"],"z":[[0,1,0,1,0],[0,1,0,1,0],[0,1,0,1,0],[0,1,0,1,0],[0,1,0,1,0],[0,1,0,1,0],[0,1,0,1,0],[0,1,1,0,0],[0,1,1,0,0],[0,0,1,1,0],[0,0,1,1,0],[0,0,1,1,0],[0,1,1,1,0],[0,1,0,1,0],[0,1,0,0,0],[0,1,0,0,0],[0,1,0,1,0],[0,0,0,1,0],[0,0,0,1,0],[0,0,0,1,0],[0,0,1,1,1],[0,0,1,1,1],[0,0,1,1,1],[0,0,0,1,1],[0,0,0,1,1],[0,0,0,1,1],[0,0,1,0,0],[0,0,1,0,0],[1,0,1,0,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,1,1,0],[0,0,1,1,0],[0,0,1,1,0],[0,0,1,1,0],[0,0,1,1,0],[0,0,1,1,0],[0,0,1,1,0],[0,0,1,1,0],[0,0,1,1,0],[0,0,1,1,0],[0,0,1,1,0],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,0],[1,1,1,1,0],[1,1,1,1,0],[1,1,1,1,0],[1,1,1,1,0],[1,1,1,1,0],[1,1,1,1,0],[1,1,1,1,0],[1,0,1,0,0],[1,0,1,0,0],[1,0,1,0,0],[1,0,1,0,0],[1,0,1,0,0],[1,0,1,0,0],[1,0,1,0,0],[1,0,1,0,0],[0,1,0,1,0],[0,1,0,1,0],[0,1,0,1,0]],"type":"heatmap"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"title":{"text":"Context Type"},"tickangle":-90,"showgrid":false},"margin":{"l":200,"r":20,"t":50,"b":50},"title":{"text":"Context Type by Task"},"yaxis":{"title":{"text":"Tasks"},"showgrid":false},"height":1820},                        {"responsive": true}                    )                };                            </script>        </div>
+                  </div>
+               </div>
+               <!-- Skill Type Plots -->
+               <div class="subsection">
+                  <h3 class="text-secondary">Tasks by Skill Type</h3>
+                  <div class="mb-4">
+                     <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="617fe340-955f-4e30-8fb5-ffd7d05a862f" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("617fe340-955f-4e30-8fb5-ffd7d05a862f")) {                    Plotly.newPlot(                        "617fe340-955f-4e30-8fb5-ffd7d05a862f",                        [{"marker":{"color":"blue"},"x":["Instruction following","Retrieval: context","Retrieval: memory","Reasoning: analogy","Reasoning: deduction","Reasoning: math","Reasoning: causal"],"y":[24,25,35,6,39,32,22],"type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"title":{"text":"Number of Tasks by Skill"},"xaxis":{"title":{"text":"Skill"}},"yaxis":{"title":{"text":"Number of Tasks"}}},                        {"responsive": true}                    )                };                            </script>        </div>
+                  </div>
+                  <div class="mb-4">
+                     <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="fc05d798-1ef2-4999-b465-8278e1edade5" class="plotly-graph-div" style="height:1820px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("fc05d798-1ef2-4999-b465-8278e1edade5")) {                    Plotly.newPlot(                        "fc05d798-1ef2-4999-b465-8278e1edade5",                        [{"colorscale":[[0,"white"],[1,"red"]],"showscale":false,"x":["Instruction following","Retrieval: context","Retrieval: memory","Reasoning: analogy","Reasoning: deduction","Reasoning: math","Reasoning: causal"],"y":["ElectricityIncreaseInPredictionTask","ElectricityIncreaseInPredictionWithDistractorText","ElectricityIncreaseInPredictionWithDistractorWithDates","ElectricityIncreaseInPredictionWithSplitContext","ShortNewsElectricityIncreaseInPredictionTask","MediumNewsElectricityIncreaseInPredictionTask","LongNewsElectricityIncreaseInPredictionTask","CashDepletedinATMScenarioTask","ATMBuildingClosedTask","ATMUnderPeriodicMaintenanceTaskWithConclusion","ATMUnderPeriodicMaintenanceTaskWithConclusionLessExplicit","ATMUnderPeriodicMaintenanceTaskWithoutConclusion","IncreasedWithdrawalScenario","DecreaseInTrafficInPredictionTask","OraclePredUnivariateConstraintsTask","BoundedPredConstraintsBasedOnPredQuantilesTask","SensorMaintenanceInPredictionTask","SensorPeriodicMaintenanceTask","SensorTrendAccumulationTask","SensorSpikeTask","SpeedFromLoadTask","ExplicitPressureFromSpeedTask","ImplicitPressureFromSpeedTask","MinimalCausalContextBivarLinSVAR","FullCausalContextImplicitEquationBivarLinSVAR","FullCausalContextExplicitEquationBivarLinSVAR","MinimalInfoHalfDaySolarForecastTask","LocaleInfoHalfDaySolarForecastTask","ZenithInfoHalfDaySolarForecastTask","SimilarLocationDaySolarForecastTask","ExplicitSimilarLocationDaySolarForecastTask","SimilarLocationWithReferenceDaySolarForecastTask","ImplicitTrafficForecastTaskwithHolidaysInPredictionWindow","ExplicitTrafficForecastTaskwithHolidaysInPredictionWindow","ExplicitWithDaysTrafficForecastTaskwithHolidaysInPredictionWindow","ExplicitWithDatesAndDaysTrafficForecastTaskwithHolidaysInPredictionWindow","DirectNormalIrradianceFromCloudStatus","ExplicitDirectNormalIrradianceFromCloudStatus","DiffuseHorizontalIrradianceFromCloudStatus","ExplicitDiffuseHorizontalIrradianceFromCloudStatus","GlobalHorizontalIrradianceFromClearsky","DirectNormalIrradianceFromClearsky","MontrealFireNauticalRescueAnalogyFullLocalizationMaybeWaterTask","MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask","MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask","MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask","MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask","MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask","MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask","MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask","MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask","MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask","MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask","MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask","MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask","MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask","MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask","MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask","MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask","MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask","MontrealFireFieldFireExplicitShortHistoryTask","MontrealFireFieldFireImplicitShortHistoryTask","MontrealFireTrashFireExplicitShortHistoryTask","MontrealFireTrashFireImplicitShortHistoryTask","MontrealFireNauticalRescueExplicitShortHistoryTask","MontrealFireNauticalRescueImplicitShortHistoryTask","MontrealFireIceRescueExplicitShortHistoryTask","MontrealFireIceRescueImplicitShortHistoryTask","UnemploymentCountyUsingSingleStateData","UnemploymentCountyUsingMultipleStateData","UnemploymentCountyUsingExplicitMultipleStateData"],"z":[[1,0,0,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,0,0,0,0],[1,0,0,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,0,0,0,0],[1,0,0,0,0,0,0],[0,0,0,0,1,0,0],[1,0,0,0,0,1,0],[1,0,0,0,1,0,0],[1,0,0,0,1,0,0],[1,0,0,0,0,0,0],[1,0,0,0,0,0,0],[1,0,0,0,0,0,0],[1,0,0,0,0,0,0],[1,0,0,0,0,0,0],[1,0,0,0,0,0,0],[1,0,0,0,0,1,0],[1,0,0,0,0,0,0],[1,0,0,0,0,1,1],[1,0,0,0,0,1,1],[1,0,1,0,0,1,1],[0,0,1,0,0,1,1],[0,0,1,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,0,0],[0,0,0,0,1,0,0],[0,0,0,0,1,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,0,1,0,0],[0,0,1,0,1,0,0],[0,0,0,0,1,0,0],[0,0,0,0,1,0,0],[0,0,0,0,1,0,0],[0,0,0,0,1,0,0],[1,0,0,0,0,0,0],[0,0,0,0,1,0,0],[1,0,0,0,0,0,0],[0,0,0,0,1,0,0],[0,0,0,0,1,0,0],[0,1,0,1,0,0,0],[0,1,1,1,0,0,0],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,1,1,0,1,1,1],[0,0,1,0,1,1,0],[0,0,1,0,1,1,0],[0,0,1,0,1,1,0],[0,0,1,0,1,1,0],[0,0,1,0,1,1,0],[0,0,1,0,1,1,0],[0,0,1,0,1,1,0],[0,0,1,0,1,1,0],[0,0,1,0,0,0,0],[0,1,1,1,0,0,0],[0,1,1,1,0,0,0]],"type":"heatmap"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"title":{"text":"Skill"},"tickangle":-90,"showgrid":false},"margin":{"l":200,"r":20,"t":50,"b":50},"title":{"text":"Skill by Task"},"yaxis":{"title":{"text":"Tasks"},"showgrid":false},"height":1820},                        {"responsive": true}                    )                };                            </script>        </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="section">
+            <h2 class="text-primary" data-bs-toggle="collapse" data-bs-target="#tasks-by-context-section">Tasks by Context Type</h2>
+            <div class="collapse" id="tasks-by-context-section">
+               <div class="mb-4">
+                  There is a total of 71 tasks in the benchmark.
+               </div>
+               <h3 class='text-primary'>History</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./ZenithInfoHalfDaySolarForecastTask.html'>ZenithInfoHalfDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldFireExplicitShortHistoryTask.html'>MontrealFireFieldFireExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldFireImplicitShortHistoryTask.html'>MontrealFireFieldFireImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashFireExplicitShortHistoryTask.html'>MontrealFireTrashFireExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashFireImplicitShortHistoryTask.html'>MontrealFireTrashFireImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueExplicitShortHistoryTask.html'>MontrealFireNauticalRescueExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueImplicitShortHistoryTask.html'>MontrealFireNauticalRescueImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireIceRescueExplicitShortHistoryTask.html'>MontrealFireIceRescueExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireIceRescueImplicitShortHistoryTask.html'>MontrealFireIceRescueImplicitShortHistoryTask</a></li>
+</ul>
+<h3 class='text-primary'>Future</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionTask.html'>ElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionWithDistractorText.html'>ElectricityIncreaseInPredictionWithDistractorText</a></li>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionWithDistractorWithDates.html'>ElectricityIncreaseInPredictionWithDistractorWithDates</a></li>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionWithSplitContext.html'>ElectricityIncreaseInPredictionWithSplitContext</a></li>
+<li class='list-group-item'><a href='./ShortNewsElectricityIncreaseInPredictionTask.html'>ShortNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./MediumNewsElectricityIncreaseInPredictionTask.html'>MediumNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./LongNewsElectricityIncreaseInPredictionTask.html'>LongNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./CashDepletedinATMScenarioTask.html'>CashDepletedinATMScenarioTask</a></li>
+<li class='list-group-item'><a href='./ATMBuildingClosedTask.html'>ATMBuildingClosedTask</a></li>
+<li class='list-group-item'><a href='./IncreasedWithdrawalScenario.html'>IncreasedWithdrawalScenario</a></li>
+<li class='list-group-item'><a href='./DecreaseInTrafficInPredictionTask.html'>DecreaseInTrafficInPredictionTask</a></li>
+<li class='list-group-item'><a href='./OraclePredUnivariateConstraintsTask.html'>OraclePredUnivariateConstraintsTask</a></li>
+<li class='list-group-item'><a href='./BoundedPredConstraintsBasedOnPredQuantilesTask.html'>BoundedPredConstraintsBasedOnPredQuantilesTask</a></li>
+<li class='list-group-item'><a href='./SensorMaintenanceInPredictionTask.html'>SensorMaintenanceInPredictionTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingSingleStateData.html'>UnemploymentCountyUsingSingleStateData</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingMultipleStateData.html'>UnemploymentCountyUsingMultipleStateData</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingExplicitMultipleStateData.html'>UnemploymentCountyUsingExplicitMultipleStateData</a></li>
+</ul>
+<h3 class='text-primary'>Intemporal</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./CashDepletedinATMScenarioTask.html'>CashDepletedinATMScenarioTask</a></li>
+<li class='list-group-item'><a href='./ATMBuildingClosedTask.html'>ATMBuildingClosedTask</a></li>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithConclusion.html'>ATMUnderPeriodicMaintenanceTaskWithConclusion</a></li>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithConclusionLessExplicit.html'>ATMUnderPeriodicMaintenanceTaskWithConclusionLessExplicit</a></li>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithoutConclusion.html'>ATMUnderPeriodicMaintenanceTaskWithoutConclusion</a></li>
+<li class='list-group-item'><a href='./IncreasedWithdrawalScenario.html'>IncreasedWithdrawalScenario</a></li>
+<li class='list-group-item'><a href='./SpeedFromLoadTask.html'>SpeedFromLoadTask</a></li>
+<li class='list-group-item'><a href='./ExplicitPressureFromSpeedTask.html'>ExplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./ImplicitPressureFromSpeedTask.html'>ImplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./MinimalInfoHalfDaySolarForecastTask.html'>MinimalInfoHalfDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./LocaleInfoHalfDaySolarForecastTask.html'>LocaleInfoHalfDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./ZenithInfoHalfDaySolarForecastTask.html'>ZenithInfoHalfDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./SimilarLocationDaySolarForecastTask.html'>SimilarLocationDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./ExplicitSimilarLocationDaySolarForecastTask.html'>ExplicitSimilarLocationDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./SimilarLocationWithReferenceDaySolarForecastTask.html'>SimilarLocationWithReferenceDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./ImplicitTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ImplicitTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./ExplicitTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ExplicitTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./ExplicitWithDaysTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ExplicitWithDaysTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./ExplicitWithDatesAndDaysTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ExplicitWithDatesAndDaysTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./DirectNormalIrradianceFromCloudStatus.html'>DirectNormalIrradianceFromCloudStatus</a></li>
+<li class='list-group-item'><a href='./ExplicitDirectNormalIrradianceFromCloudStatus.html'>ExplicitDirectNormalIrradianceFromCloudStatus</a></li>
+<li class='list-group-item'><a href='./DiffuseHorizontalIrradianceFromCloudStatus.html'>DiffuseHorizontalIrradianceFromCloudStatus</a></li>
+<li class='list-group-item'><a href='./ExplicitDiffuseHorizontalIrradianceFromCloudStatus.html'>ExplicitDiffuseHorizontalIrradianceFromCloudStatus</a></li>
+<li class='list-group-item'><a href='./GlobalHorizontalIrradianceFromClearsky.html'>GlobalHorizontalIrradianceFromClearsky</a></li>
+<li class='list-group-item'><a href='./DirectNormalIrradianceFromClearsky.html'>DirectNormalIrradianceFromClearsky</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueAnalogyFullLocalizationMaybeWaterTask.html'>MontrealFireNauticalRescueAnalogyFullLocalizationMaybeWaterTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask.html'>MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldFireExplicitShortHistoryTask.html'>MontrealFireFieldFireExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldFireImplicitShortHistoryTask.html'>MontrealFireFieldFireImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashFireExplicitShortHistoryTask.html'>MontrealFireTrashFireExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashFireImplicitShortHistoryTask.html'>MontrealFireTrashFireImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueExplicitShortHistoryTask.html'>MontrealFireNauticalRescueExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueImplicitShortHistoryTask.html'>MontrealFireNauticalRescueImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireIceRescueExplicitShortHistoryTask.html'>MontrealFireIceRescueExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireIceRescueImplicitShortHistoryTask.html'>MontrealFireIceRescueImplicitShortHistoryTask</a></li>
+</ul>
+<h3 class='text-primary'>Covariates</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionTask.html'>ElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionWithDistractorText.html'>ElectricityIncreaseInPredictionWithDistractorText</a></li>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionWithDistractorWithDates.html'>ElectricityIncreaseInPredictionWithDistractorWithDates</a></li>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionWithSplitContext.html'>ElectricityIncreaseInPredictionWithSplitContext</a></li>
+<li class='list-group-item'><a href='./ShortNewsElectricityIncreaseInPredictionTask.html'>ShortNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./MediumNewsElectricityIncreaseInPredictionTask.html'>MediumNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./LongNewsElectricityIncreaseInPredictionTask.html'>LongNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithConclusion.html'>ATMUnderPeriodicMaintenanceTaskWithConclusion</a></li>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithConclusionLessExplicit.html'>ATMUnderPeriodicMaintenanceTaskWithConclusionLessExplicit</a></li>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithoutConclusion.html'>ATMUnderPeriodicMaintenanceTaskWithoutConclusion</a></li>
+<li class='list-group-item'><a href='./IncreasedWithdrawalScenario.html'>IncreasedWithdrawalScenario</a></li>
+<li class='list-group-item'><a href='./DecreaseInTrafficInPredictionTask.html'>DecreaseInTrafficInPredictionTask</a></li>
+<li class='list-group-item'><a href='./SensorMaintenanceInPredictionTask.html'>SensorMaintenanceInPredictionTask</a></li>
+<li class='list-group-item'><a href='./SensorPeriodicMaintenanceTask.html'>SensorPeriodicMaintenanceTask</a></li>
+<li class='list-group-item'><a href='./SensorTrendAccumulationTask.html'>SensorTrendAccumulationTask</a></li>
+<li class='list-group-item'><a href='./SensorSpikeTask.html'>SensorSpikeTask</a></li>
+<li class='list-group-item'><a href='./SpeedFromLoadTask.html'>SpeedFromLoadTask</a></li>
+<li class='list-group-item'><a href='./ExplicitPressureFromSpeedTask.html'>ExplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./ImplicitPressureFromSpeedTask.html'>ImplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./MinimalCausalContextBivarLinSVAR.html'>MinimalCausalContextBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./FullCausalContextImplicitEquationBivarLinSVAR.html'>FullCausalContextImplicitEquationBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./FullCausalContextExplicitEquationBivarLinSVAR.html'>FullCausalContextExplicitEquationBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./ExplicitTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ExplicitTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./ExplicitWithDaysTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ExplicitWithDaysTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./ExplicitWithDatesAndDaysTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ExplicitWithDatesAndDaysTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./DirectNormalIrradianceFromCloudStatus.html'>DirectNormalIrradianceFromCloudStatus</a></li>
+<li class='list-group-item'><a href='./ExplicitDirectNormalIrradianceFromCloudStatus.html'>ExplicitDirectNormalIrradianceFromCloudStatus</a></li>
+<li class='list-group-item'><a href='./DiffuseHorizontalIrradianceFromCloudStatus.html'>DiffuseHorizontalIrradianceFromCloudStatus</a></li>
+<li class='list-group-item'><a href='./ExplicitDiffuseHorizontalIrradianceFromCloudStatus.html'>ExplicitDiffuseHorizontalIrradianceFromCloudStatus</a></li>
+<li class='list-group-item'><a href='./GlobalHorizontalIrradianceFromClearsky.html'>GlobalHorizontalIrradianceFromClearsky</a></li>
+<li class='list-group-item'><a href='./DirectNormalIrradianceFromClearsky.html'>DirectNormalIrradianceFromClearsky</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueAnalogyFullLocalizationMaybeWaterTask.html'>MontrealFireNauticalRescueAnalogyFullLocalizationMaybeWaterTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask.html'>MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingSingleStateData.html'>UnemploymentCountyUsingSingleStateData</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingMultipleStateData.html'>UnemploymentCountyUsingMultipleStateData</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingExplicitMultipleStateData.html'>UnemploymentCountyUsingExplicitMultipleStateData</a></li>
+</ul>
+<h3 class='text-primary'>Causal</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./SpeedFromLoadTask.html'>SpeedFromLoadTask</a></li>
+<li class='list-group-item'><a href='./ExplicitPressureFromSpeedTask.html'>ExplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./ImplicitPressureFromSpeedTask.html'>ImplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./MinimalCausalContextBivarLinSVAR.html'>MinimalCausalContextBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./FullCausalContextImplicitEquationBivarLinSVAR.html'>FullCausalContextImplicitEquationBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./FullCausalContextExplicitEquationBivarLinSVAR.html'>FullCausalContextExplicitEquationBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask</a></li>
+</ul>
+
+            </div>
+         </div>
+         <div class="section">
+            <h2 class="text-primary" data-bs-toggle="collapse" data-bs-target="#tasks-by-skill-section">Tasks by Skill</h2>
+            <div class="collapse" id="tasks-by-skill-section">
+               <div class="mb-4">
+                  There is a total of 71 tasks in the benchmark.
+               </div>
+               <h3 class='text-primary'>Instruction following</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionTask.html'>ElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionWithDistractorText.html'>ElectricityIncreaseInPredictionWithDistractorText</a></li>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionWithDistractorWithDates.html'>ElectricityIncreaseInPredictionWithDistractorWithDates</a></li>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionWithSplitContext.html'>ElectricityIncreaseInPredictionWithSplitContext</a></li>
+<li class='list-group-item'><a href='./ShortNewsElectricityIncreaseInPredictionTask.html'>ShortNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./MediumNewsElectricityIncreaseInPredictionTask.html'>MediumNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./LongNewsElectricityIncreaseInPredictionTask.html'>LongNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./CashDepletedinATMScenarioTask.html'>CashDepletedinATMScenarioTask</a></li>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithConclusion.html'>ATMUnderPeriodicMaintenanceTaskWithConclusion</a></li>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithConclusionLessExplicit.html'>ATMUnderPeriodicMaintenanceTaskWithConclusionLessExplicit</a></li>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithoutConclusion.html'>ATMUnderPeriodicMaintenanceTaskWithoutConclusion</a></li>
+<li class='list-group-item'><a href='./IncreasedWithdrawalScenario.html'>IncreasedWithdrawalScenario</a></li>
+<li class='list-group-item'><a href='./DecreaseInTrafficInPredictionTask.html'>DecreaseInTrafficInPredictionTask</a></li>
+<li class='list-group-item'><a href='./OraclePredUnivariateConstraintsTask.html'>OraclePredUnivariateConstraintsTask</a></li>
+<li class='list-group-item'><a href='./BoundedPredConstraintsBasedOnPredQuantilesTask.html'>BoundedPredConstraintsBasedOnPredQuantilesTask</a></li>
+<li class='list-group-item'><a href='./SensorMaintenanceInPredictionTask.html'>SensorMaintenanceInPredictionTask</a></li>
+<li class='list-group-item'><a href='./SensorPeriodicMaintenanceTask.html'>SensorPeriodicMaintenanceTask</a></li>
+<li class='list-group-item'><a href='./SensorTrendAccumulationTask.html'>SensorTrendAccumulationTask</a></li>
+<li class='list-group-item'><a href='./SensorSpikeTask.html'>SensorSpikeTask</a></li>
+<li class='list-group-item'><a href='./SpeedFromLoadTask.html'>SpeedFromLoadTask</a></li>
+<li class='list-group-item'><a href='./ExplicitPressureFromSpeedTask.html'>ExplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./ImplicitPressureFromSpeedTask.html'>ImplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./ExplicitDirectNormalIrradianceFromCloudStatus.html'>ExplicitDirectNormalIrradianceFromCloudStatus</a></li>
+<li class='list-group-item'><a href='./ExplicitDiffuseHorizontalIrradianceFromCloudStatus.html'>ExplicitDiffuseHorizontalIrradianceFromCloudStatus</a></li>
+</ul>
+<h3 class='text-primary'>Retrieval: context</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionWithDistractorText.html'>ElectricityIncreaseInPredictionWithDistractorText</a></li>
+<li class='list-group-item'><a href='./ElectricityIncreaseInPredictionWithDistractorWithDates.html'>ElectricityIncreaseInPredictionWithDistractorWithDates</a></li>
+<li class='list-group-item'><a href='./ShortNewsElectricityIncreaseInPredictionTask.html'>ShortNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./MediumNewsElectricityIncreaseInPredictionTask.html'>MediumNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./LongNewsElectricityIncreaseInPredictionTask.html'>LongNewsElectricityIncreaseInPredictionTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueAnalogyFullLocalizationMaybeWaterTask.html'>MontrealFireNauticalRescueAnalogyFullLocalizationMaybeWaterTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask.html'>MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingMultipleStateData.html'>UnemploymentCountyUsingMultipleStateData</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingExplicitMultipleStateData.html'>UnemploymentCountyUsingExplicitMultipleStateData</a></li>
+</ul>
+<h3 class='text-primary'>Retrieval: memory</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./ImplicitPressureFromSpeedTask.html'>ImplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./MinimalCausalContextBivarLinSVAR.html'>MinimalCausalContextBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./FullCausalContextImplicitEquationBivarLinSVAR.html'>FullCausalContextImplicitEquationBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./SimilarLocationDaySolarForecastTask.html'>SimilarLocationDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./ExplicitSimilarLocationDaySolarForecastTask.html'>ExplicitSimilarLocationDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./SimilarLocationWithReferenceDaySolarForecastTask.html'>SimilarLocationWithReferenceDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./ImplicitTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ImplicitTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask.html'>MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldFireExplicitShortHistoryTask.html'>MontrealFireFieldFireExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldFireImplicitShortHistoryTask.html'>MontrealFireFieldFireImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashFireExplicitShortHistoryTask.html'>MontrealFireTrashFireExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashFireImplicitShortHistoryTask.html'>MontrealFireTrashFireImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueExplicitShortHistoryTask.html'>MontrealFireNauticalRescueExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueImplicitShortHistoryTask.html'>MontrealFireNauticalRescueImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireIceRescueExplicitShortHistoryTask.html'>MontrealFireIceRescueExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireIceRescueImplicitShortHistoryTask.html'>MontrealFireIceRescueImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingSingleStateData.html'>UnemploymentCountyUsingSingleStateData</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingMultipleStateData.html'>UnemploymentCountyUsingMultipleStateData</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingExplicitMultipleStateData.html'>UnemploymentCountyUsingExplicitMultipleStateData</a></li>
+</ul>
+<h3 class='text-primary'>Reasoning: analogy</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./SimilarLocationDaySolarForecastTask.html'>SimilarLocationDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./ExplicitSimilarLocationDaySolarForecastTask.html'>ExplicitSimilarLocationDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueAnalogyFullLocalizationMaybeWaterTask.html'>MontrealFireNauticalRescueAnalogyFullLocalizationMaybeWaterTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask.html'>MontrealFireNauticalRescueAnalogyTargetLocalizationMaybeWaterTask</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingMultipleStateData.html'>UnemploymentCountyUsingMultipleStateData</a></li>
+<li class='list-group-item'><a href='./UnemploymentCountyUsingExplicitMultipleStateData.html'>UnemploymentCountyUsingExplicitMultipleStateData</a></li>
+</ul>
+<h3 class='text-primary'>Reasoning: deduction</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./ATMBuildingClosedTask.html'>ATMBuildingClosedTask</a></li>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithConclusionLessExplicit.html'>ATMUnderPeriodicMaintenanceTaskWithConclusionLessExplicit</a></li>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithoutConclusion.html'>ATMUnderPeriodicMaintenanceTaskWithoutConclusion</a></li>
+<li class='list-group-item'><a href='./MinimalInfoHalfDaySolarForecastTask.html'>MinimalInfoHalfDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./LocaleInfoHalfDaySolarForecastTask.html'>LocaleInfoHalfDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./ZenithInfoHalfDaySolarForecastTask.html'>ZenithInfoHalfDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./SimilarLocationWithReferenceDaySolarForecastTask.html'>SimilarLocationWithReferenceDaySolarForecastTask</a></li>
+<li class='list-group-item'><a href='./ImplicitTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ImplicitTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./ExplicitTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ExplicitTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./ExplicitWithDaysTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ExplicitWithDaysTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./ExplicitWithDatesAndDaysTrafficForecastTaskwithHolidaysInPredictionWindow.html'>ExplicitWithDatesAndDaysTrafficForecastTaskwithHolidaysInPredictionWindow</a></li>
+<li class='list-group-item'><a href='./DirectNormalIrradianceFromCloudStatus.html'>DirectNormalIrradianceFromCloudStatus</a></li>
+<li class='list-group-item'><a href='./DiffuseHorizontalIrradianceFromCloudStatus.html'>DiffuseHorizontalIrradianceFromCloudStatus</a></li>
+<li class='list-group-item'><a href='./GlobalHorizontalIrradianceFromClearsky.html'>GlobalHorizontalIrradianceFromClearsky</a></li>
+<li class='list-group-item'><a href='./DirectNormalIrradianceFromClearsky.html'>DirectNormalIrradianceFromClearsky</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldFireExplicitShortHistoryTask.html'>MontrealFireFieldFireExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldFireImplicitShortHistoryTask.html'>MontrealFireFieldFireImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashFireExplicitShortHistoryTask.html'>MontrealFireTrashFireExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashFireImplicitShortHistoryTask.html'>MontrealFireTrashFireImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueExplicitShortHistoryTask.html'>MontrealFireNauticalRescueExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueImplicitShortHistoryTask.html'>MontrealFireNauticalRescueImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireIceRescueExplicitShortHistoryTask.html'>MontrealFireIceRescueExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireIceRescueImplicitShortHistoryTask.html'>MontrealFireIceRescueImplicitShortHistoryTask</a></li>
+</ul>
+<h3 class='text-primary'>Reasoning: math</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./ATMUnderPeriodicMaintenanceTaskWithConclusion.html'>ATMUnderPeriodicMaintenanceTaskWithConclusion</a></li>
+<li class='list-group-item'><a href='./SensorTrendAccumulationTask.html'>SensorTrendAccumulationTask</a></li>
+<li class='list-group-item'><a href='./SpeedFromLoadTask.html'>SpeedFromLoadTask</a></li>
+<li class='list-group-item'><a href='./ExplicitPressureFromSpeedTask.html'>ExplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./ImplicitPressureFromSpeedTask.html'>ImplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./MinimalCausalContextBivarLinSVAR.html'>MinimalCausalContextBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./FullCausalContextImplicitEquationBivarLinSVAR.html'>FullCausalContextImplicitEquationBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./FullCausalContextExplicitEquationBivarLinSVAR.html'>FullCausalContextExplicitEquationBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldFireExplicitShortHistoryTask.html'>MontrealFireFieldFireExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldFireImplicitShortHistoryTask.html'>MontrealFireFieldFireImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashFireExplicitShortHistoryTask.html'>MontrealFireTrashFireExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashFireImplicitShortHistoryTask.html'>MontrealFireTrashFireImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueExplicitShortHistoryTask.html'>MontrealFireNauticalRescueExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireNauticalRescueImplicitShortHistoryTask.html'>MontrealFireNauticalRescueImplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireIceRescueExplicitShortHistoryTask.html'>MontrealFireIceRescueExplicitShortHistoryTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireIceRescueImplicitShortHistoryTask.html'>MontrealFireIceRescueImplicitShortHistoryTask</a></li>
+</ul>
+<h3 class='text-primary'>Reasoning: causal</h3>
+<ul class='list-group'>
+<li class='list-group-item'><a href='./SpeedFromLoadTask.html'>SpeedFromLoadTask</a></li>
+<li class='list-group-item'><a href='./ExplicitPressureFromSpeedTask.html'>ExplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./ImplicitPressureFromSpeedTask.html'>ImplicitPressureFromSpeedTask</a></li>
+<li class='list-group-item'><a href='./MinimalCausalContextBivarLinSVAR.html'>MinimalCausalContextBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./FullCausalContextImplicitEquationBivarLinSVAR.html'>FullCausalContextImplicitEquationBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./FullCausalContextExplicitEquationBivarLinSVAR.html'>FullCausalContextExplicitEquationBivarLinSVAR</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneExplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleNeutralToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndTrashConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireFieldAndGasConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndNauticalConvincingToneImplicitCausalConfoundingTask</a></li>
+<li class='list-group-item'><a href='./MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask.html'>MontrealFireTrashAndBicycleConvincingToneImplicitCausalConfoundingTask</a></li>
+</ul>
+
+            </div>
+         </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Tables -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+      <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+      <script>
+         Papa.parse("https://raw.githubusercontent.com/anon-forecast/benchmark_report_dev/main/results.csv", {
+           download: true,
+           complete: function(results) {
+             new gridjs.Grid({
+               columns: results.data[0].map(header => ({
+                     name: header,
+               })),
+               data: results.data.slice(1), // Skip the header row
+               search: true,
+               sort: true,
+               pagination: {
+                 enabled: true,
+                 limit: 10
+               },
+               fixedHeader: true,
+               autoWidth: true,
+               resizable: true
+             }).render(document.getElementById("result-table"));
+           }
+         });
+      </script>
+   </body>
+</html>
