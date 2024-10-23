@@ -1,6 +1,6 @@
 # Context is Key: A Benchmark for Forecasting with Essential Textual Information
 
-This codebase supports the following paper:
+Code coming soon!
 
 **Context is Key: A Benchmark for Forecasting with Essential Textual Information**.
 
