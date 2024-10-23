@@ -1,6 +1,6 @@
 # Context is Key: A Benchmark for Forecasting with Essential Textual Information
 
-This repository hosts the benchmark visualization website at **https://context-is-key-forecasting.github.io/** supporting the following paper:
+This repository hosts the benchmark visualization website at **https://servicenow.github.io/context-is-key-forecasting/** supporting the following paper:
 
 **Context is Key: A Benchmark for Forecasting with Essential Textual Information**.
 
@@ -14,7 +14,7 @@ We evaluate a range of approaches, including statistical models, time series fou
 Our experiments highlight the importance of incorporating contextual
 information, demonstrate surprising performance when using LLM-based forecasting models, and also reveal some of their critical shortcomings. 
 By presenting this benchmark, we aim to advance multimodal forecasting, promoting models that are both accurate and accessible to decision-makers with varied technical expertise.
-The benchmark can be visualized at https://anon-forecast.github.io/benchmark_report_dev/.
+The benchmark can be visualized at https://servicenow.github.io/context-is-key-forecasting/.
 
 ## License
 
