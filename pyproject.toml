@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchmark"
+description = "A benchmark for natural language context-aided forecasting"
+authors = [
+    {name = "TBD"},
+]
+readme = "README.md"
+requires-python = ">3.9"
+license = {text = "Apache-2.0"}
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: Apache Software License",
+]
+dynamic = ["dependencies", "optional-dependencies", "version"]
+
+[project.urls]
+homepage = "https://github.com/ServiceNow/research-starcaster"
+
+[tool.setuptools]
+packages = { find = { where = ["."] } }
+include-package-data = true
+
+[tool.setuptools.package-data]
+"benchmark.data.dominicks" = ["*.json"]
+
+[tool.setuptools.dynamic]
+version = {attr = "benchmark.__version__"}
+dependencies = {file = ["requirements.txt"]}
+optional-dependencies = {dev = { file = ["requirements-dev.txt"] }, r = { file = ["requirements-r.txt"] }}
+
+[tool.black]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.nox
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''

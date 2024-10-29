@@ -1,0 +1,3 @@
+[
+    {"label": "CC-GPT-4o-mini", "method": "directprompt", "llm": "gpt-4o-mini", "use_context": true}
+]

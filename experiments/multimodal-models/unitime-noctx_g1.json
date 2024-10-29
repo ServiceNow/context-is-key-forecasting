@@ -1,0 +1,9 @@
+[
+    {
+        "label": "UniTime-noctx",
+        "method": "unitime",
+        "use_context": false,
+        "dataset": "etth1",
+        "pred_len": "96"
+    }
+]

@@ -1,0 +1,3 @@
+[
+    {"label": "LLama3-8B", "method": "llmp", "llm": "llama-3-8B", "use_context": true}
+]

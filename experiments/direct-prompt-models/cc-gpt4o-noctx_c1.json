@@ -1,0 +1,3 @@
+[
+    {"label": "CC-GPT-4o (no ctx)", "method": "directprompt", "llm": "gpt-4o", "use_context": false}
+]

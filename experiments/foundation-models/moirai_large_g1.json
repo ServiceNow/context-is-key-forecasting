@@ -1,0 +1,7 @@
+[
+    {
+        "label": "Moirai_large",
+        "method": "moirai",
+        "model_size": "large"
+    }
+]

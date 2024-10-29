@@ -1,0 +1,3 @@
+[
+    {"label": "LLama3-70B (no ctx)", "method": "llmp", "llm": "llama-3-70B", "use_context": false}
+]
