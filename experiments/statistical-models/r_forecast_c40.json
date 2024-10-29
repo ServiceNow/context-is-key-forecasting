@@ -1,0 +1,4 @@
+[
+    {"label": "R_ETS", "method": "r_ets"},
+    {"label": "R_Arima", "method": "r_arima"}
+]

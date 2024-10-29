@@ -1,0 +1,7 @@
+[
+    {
+        "label": "Chronos_base",
+        "method": "chronos",
+        "model_size": "base"
+    }
+]

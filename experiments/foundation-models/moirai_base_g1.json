@@ -1,0 +1,7 @@
+[
+    {
+        "label": "Moirai_base",
+        "method": "moirai",
+        "model_size": "base"
+    }
+]
