@@ -10,9 +10,14 @@ import torch
 import requests
 from functools import partial
 import time
+import re
 
 from transformers import pipeline
 from types import SimpleNamespace
+from lmformatenforcer import JsonSchemaParser, RegexParser
+from lmformatenforcer.integrations.transformers import (
+    build_transformers_prefix_allowed_tokens_fn,
+)
 
 from .base import Baseline
 from ..config import (
@@ -69,13 +74,6 @@ def dict_to_obj(data):
     else:
         # Return the data if it's neither a dict nor a list
         return data
-
-
-import re
-from lmformatenforcer import JsonSchemaParser, RegexParser
-from lmformatenforcer.integrations.transformers import (
-    build_transformers_prefix_allowed_tokens_fn,
-)
 
 
 @torch.inference_mode()
