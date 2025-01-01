@@ -18,7 +18,7 @@ from lmformatenforcer import JsonSchemaParser, RegexParser
 from lmformatenforcer.integrations.transformers import (
     build_transformers_prefix_allowed_tokens_fn,
 )
-
+import litellm
 from .base import Baseline
 from ..config import (
     LLAMA31_405B_URL,
@@ -179,6 +179,19 @@ def openrouter_client(model, messages, n=1, max_tokens=10000, temperature=1.0):
     return completion
 
 
+def litellm_client(model, messages, n=1, max_tokens=10000, temperature=1.0):
+    """
+    Client for litellm chat models
+    """
+    completion = litellm.completion(
+        model=model,
+        messages=messages,
+        n=n,
+        max_tokens=max_tokens,
+        temperature=temperature,
+    )
+    return completion
+
 def llama_3_1_405b_instruct_client(
     model, messages, n=1, max_tokens=10000, temperature=1.0
 ):
@@ -325,6 +338,12 @@ class DirectPrompt(Baseline):
         elif self.model.startswith("openrouter-"):
             return partial(
                 openrouter_client,
+                temperature=self.temperature,
+            )
+
+        elif self.model.startswith("litellm-"):
+            return partial(
+                litellm_client,
                 temperature=self.temperature,
             )
 
