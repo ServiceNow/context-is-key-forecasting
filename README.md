@@ -15,6 +15,39 @@
 * **Metrics:** All metric-related code can be found [here](./cik_benchmark/metrics).
 * **Experiments:** Code used to run the experiments can be found [here](./experiments).
 
+## Getting started
+
+Once the repository has been cloned locally, start by creating a conda package:
+```bash
+conda create --name CiK python=3.11
+conda activate CiK
+```
+(Note that there are compatibility issues with very recent versions of Python,
+so we recommend using Python 3.11.)
+Next, install the package:
+```bash
+pip install -e .
+```
+The `-e` option is useful for development, as it installs the package in
+editable mode. This means that changes to the code will be reflected in the
+package without needing to reinstall it. In addition, if you intend on running
+the R baselines, you will need to install additional packages. You also
+separately need to make sure that R is installed on your system, which you can
+find how to do at the [R Project](https://r-project.org) website.
+```bash
+pip install -r ./requirements-r.txt
+```
+
+You will need to set some environment variables; the full list appears in the
+next section. In particular, `NIXTLA_API_KEY` must be set for the code to
+baselines to run. Go to [](https://dashboard.nixtla.io/) to set up an account
+and get an API key.
+
+When all is done, you're ready to run baseline models. For instance, to run the
+Qwen 7B-parameter model locally (it will be downloaded automatically from Hugging Face the first time you run it), you can run:
+```bash
+python run_baselines.py --exp-spec experiments/direct-prompt-models/qwen_7b_instruct_ctx_g2.json
+```
 
 ## Setting environment variables
 

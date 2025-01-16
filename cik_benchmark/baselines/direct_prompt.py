@@ -89,25 +89,6 @@ def huggingface_instruct_model_client(
     future_timestamps=None,
     **kwargs,
 ):
-    if constrained_decoding:
-        assert (
-            future_timestamps is not None
-        ), "Future timestamps must be provided for constrained decoding"
-
-    def constrained_decoding_regex(required_timestamps):
-        """
-        Generates a regular expression to force the model output
-        to satisfy the required format and provide values for
-        all required timestamps
-
-        """
-        timestamp_regex = "".join(
-            [
-                r"\(\s*{}\s*,\s*[-+]?\d+(\.\d+)?\)\n".format(re.escape(ts))
-                for ts in required_timestamps
-            ]
-        )
-        return r"<forecast>\n{}<\/forecast>".format(timestamp_regex)
 
     # Make generation pipeline
     pipe = pipeline(
@@ -117,11 +98,34 @@ def huggingface_instruct_model_client(
         device_map="auto",
     )
 
-    # Build a regex parser with the generated regex
-    parser = RegexParser(constrained_decoding_regex(future_timestamps))
-    prefix_function = build_transformers_prefix_allowed_tokens_fn(
-        pipe.tokenizer, parser
-    )
+    # If constrained decoding, build a prefix function. This requires the future
+    # timestamps to be specified, so we can make them part of the regex
+    prefix_function = None
+    if constrained_decoding:
+        assert (
+            future_timestamps is not None
+        ), "Future timestamps must be provided for constrained decoding"
+
+        def constrained_decoding_regex(required_timestamps):
+            """
+            Generates a regular expression to force the model output
+            to satisfy the required format and provide values for
+            all required timestamps
+
+            """
+            timestamp_regex = "".join(
+                [
+                    r"\(\s*{}\s*,\s*[-+]?\d+(\.\d+)?\)\n".format(re.escape(ts))
+                    for ts in required_timestamps
+                ]
+            )
+            return r"<forecast>\n{}<\/forecast>".format(timestamp_regex)
+
+        # Build a regex parser with the generated regex
+        parser = RegexParser(constrained_decoding_regex(future_timestamps))
+        prefix_function = build_transformers_prefix_allowed_tokens_fn(
+            pipe.tokenizer, parser
+        )
 
     # Now extract the assistant's reply
     choices = []

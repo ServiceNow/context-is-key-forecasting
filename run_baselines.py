@@ -217,12 +217,13 @@ def experiment_directprompt(
         "gemma-2-27B-instruct": {"input": 0.0, "output": 0.0},  # Toolkit
     }
     if not llm.startswith("openrouter-") and llm not in openai_costs:
-        raise ValueError(f"Invalid model: {llm} -- Not in cost dictionary")
+        # Log a warning if the model is not in the cost dictionary
+        logging.warning(f"Model {llm} not in cost dictionary; assuming zero token cost")
 
     dp_forecaster = DirectPrompt(
         model=llm,
         use_context=use_context,
-        token_cost=openai_costs[llm] if not llm.startswith("openrouter-") else None,
+        token_cost=None if llm.startswith("openrouter-") else openai_costs.get(llm, None),
         batch_size=batch_size,
         batch_size_on_retry=batch_size_on_retry,
         n_retries=n_retries,
