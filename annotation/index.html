@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIK Capability Annotations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1 style="padding-bottom: 20px;">Context is Key Benchmark - Annotator Platform</h1>
+
+        <!-- Source URL and Fetch Button -->
+        <div class="source-wrapper">
+            <label for="page-url" class="source-label">Source:</label>
+            <input type="text" id="page-url" class="source-input" placeholder="Enter URL here...">
+            <button class="fetch-button" onclick="fetchTasks()">Reset</button>
+        </div>
+
+        <!-- Progress Bar and Download Button -->
+        <div id="progress-wrapper">
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <span id="progress-info">0/0</span>
+            <button onclick="downloadJSON()">Download Results</button>
+        </div>
+
+        <!-- Annotation Instruction -->
+        <p class="progress-instruction">
+            Please inspect the task below and annotate it by selecting which capabilities are required to infer the ground truth time series based on the provided contextual information and history. Before proceeding, please read the <a href="#" class="definition-link" onclick="showDefinitions()">definition</a> of each capability carefully.
+            Once you are done, please download the results and send us the json file.
+        </p>
+
+        <!-- Content and Annotation Pane -->
+        <div class="content-wrapper">
+            <div id="rendered-content" style="display: none;"></div>
+            <div id="annotation-pane" style="display: none;">
+                <h3>Capabilities</h3>
+                <p class="annotation-instructions">
+                    Please select all that apply.
+                </p>
+                <form id="capabilities-form">
+                    <label class="capability-checkbox">
+                        <input type="checkbox" value="instruction following"> Instruction Following
+                    </label>
+                    <label class="capability-checkbox">
+                        <input type="checkbox" value="retrieval: context"> Retrieval: Context
+                    </label>
+                    <label class="capability-checkbox">
+                        <input type="checkbox" value="retrieval: memory"> Retrieval: Memory
+                    </label>
+                    <label class="capability-checkbox">
+                        <input type="checkbox" value="reasoning: analogy"> Reasoning: Analogy
+                    </label>
+                    <label class="capability-checkbox">
+                        <input type="checkbox" value="reasoning: deduction"> Reasoning: Deduction
+                    </label>
+                    <label class="capability-checkbox">
+                        <input type="checkbox" value="reasoning: math"> Reasoning: Math
+                    </label>
+                    <label class="capability-checkbox">
+                        <input type="checkbox" value="reasoning: causal"> Reasoning: Causal
+                    </label>
+                    <div class="button-container">
+                        <button type="button" class="next-button" onclick="saveAnnotationsAndNext()" disabled>Save</button>
+                        <button type="button" class="skip-button" onclick="skipTask()">Skip</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Definitions Modal -->
+    <div id="definitions-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeDefinitions()">&times;</span>
+            <h2>Capability Definitions</h2>
+            <ul>
+                <li><strong>Instruction Following:</strong> Ability to execute tasks based on explicit instructions.</li>
+                <li><strong>Retrieval: Context:</strong> Extracting relevant information from external sources to contextualize the task.</li>
+                <li><strong>Retrieval: Memory:</strong> Leveraging stored or previously learned information to solve the task.</li>
+                <li><strong>Reasoning: Analogy:</strong> Drawing parallels between similar situations to deduce solutions.</li>
+                <li><strong>Reasoning: Deduction:</strong> Applying logical rules to derive conclusions from given premises.</li>
+                <li><strong>Reasoning: Math:</strong> Solving problems involving numerical and mathematical reasoning.</li>
+                <li><strong>Reasoning: Causal:</strong> Identifying and reasoning about cause-and-effect relationships.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Include Scripts -->
+    <script src="./scripts.js"></script>
+</body>
+</html>

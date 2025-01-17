@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+#container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #007BFF;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.source-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.source-label {
+    font-size: 16px;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.source-input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.fetch-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.fetch-button:hover {
+    background-color: #0056b3;
+}
+
+#progress-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+    width: 100%;
+}
+
+#progress-container {
+    flex-grow: 1;
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    width: 0;
+    transition: width 0.5s;
+}
+
+#progress-info {
+    font-size: 16px;
+    margin-left: 10px;
+    min-width: 60px;
+    font-weight: 500;
+}
+
+.progress-instruction {
+    font-size: 18px;
+    font-weight: 500;
+    color: #555; /* Neutral dark gray for text */
+    background-color: #fff3cd; /* Light yellow background */
+    border: 1px solid #ffeeba; /* Slightly darker yellow border */
+    padding: 15px 20px; /* Add padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 25px auto; /* Add spacing around and center the box */
+    max-width: 800px; /* Limit the width for a clean look */
+    text-align: left; /* Align text to the left */
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#rendered-content {
+    width: 75%;
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 650px;
+    min-height: 650px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#annotation-pane {
+    width: 22%;
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.annotation-instructions {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.capability-checkbox {
+    display: block;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.next-button:hover {
+    background-color: #218838;
+}
+
+.next-button:disabled {
+    background-color: #d6d6d6; /* Light gray to show it's disabled */
+    color: #999; /* Muted text color */
+    cursor: not-allowed; /* Indicate the button cannot be clicked */
+    opacity: 0.6; /* Reduce opacity for a clearer disabled effect */
+}
+
+.skip-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.skip-button:hover {
+    background-color: #e0a800;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center both buttons horizontally */
+    gap: 10px; /* Add space between buttons */
+    margin-top: 20px; /* Add some spacing above the buttons */
+}
+
+.next-button,
+.skip-button {
+    flex: 1; /* Ensure both buttons have equal width */
+    max-width: 150px; /* Optional: Limit maximum button width */
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #007BFF;
+}
+
+.modal-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-content li {
+    margin-bottom: 10px;
+}
+
+.modal-content strong {
+    color: #333;
+}
+
+.close-button {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+#container {
+    position: relative; /* Ensure proper positioning for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 100vh; /* Prevent overflow beyond the viewport */
+}
