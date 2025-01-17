@@ -243,7 +243,7 @@ function initializeCheckboxListeners() {
 
 // Call initializeCheckboxListeners on page load
 window.onload = function () {
-    const defaultUrl = new URLSearchParams(window.location.search).get("url") || "https://anon-forecast.github.io/benchmark_report_dev/";
+    const defaultUrl = new URLSearchParams(window.location.search).get("url") || "https://servicenow.github.io/context-is-key-forecasting/v0/";
     document.getElementById("page-url").value = defaultUrl;
 
     fetchTasks();
