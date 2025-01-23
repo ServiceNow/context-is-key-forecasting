@@ -228,12 +228,14 @@ function downloadJSON() {
 function toggleNextButtonState() {
     const form = document.getElementById("capabilities-form");
     const checkboxes = Array.from(form.elements).filter(input => input.type === "checkbox");
-    const yesNoButtons = Array.from(form.elements).filter(input => input.type === "radio");
+    const usefulContextButtons = Array.from(form.elements).filter(
+        input => input.type === "radio" && input.name === "test-question"
+    );
     const nextButton = form.querySelector(".next-button");
 
     // Enable the Next button if at least one checkbox is checked
     const isAnyChecked = checkboxes.some(checkbox => checkbox.checked);
-    const isYesNoSelected = yesNoButtons.some(button => button.checked);
+    const isYesNoSelected = usefulContextButtons.some(button => button.checked);
     nextButton.disabled = !isAnyChecked || !isYesNoSelected; // Disable if no checkboxes are checked and no radio buttons are selected
 }
 
@@ -241,12 +243,14 @@ function toggleNextButtonState() {
 function initializeCheckboxListeners() {
     const form = document.getElementById("capabilities-form");
     const checkboxes = Array.from(form.elements).filter(input => input.type === "checkbox");
-    const yesNoButtons = Array.from(form.elements).filter(input => input.type === "radio");
+    const usefulContextButtons = Array.from(form.elements).filter(
+        input => input.type === "radio" && input.name === "test-question"
+    );
 
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener("change", toggleNextButtonState);
     });
-    yesNoButtons.forEach(button => {
+    usefulContextButtons.forEach(button => {
         button.addEventListener("change", toggleNextButtonState);
     });
 
