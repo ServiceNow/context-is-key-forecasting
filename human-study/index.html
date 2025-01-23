@@ -39,7 +39,9 @@
 
         <!-- Content and Annotation Pane -->
         <div class="content-wrapper">
-            <div id="rendered-content" style="display: none;"></div>
+            <div id="rendered-content"
+                style="display: none; resize: both; overflow: auto; min-width: 200px; min-height: 100px; border: 1px solid #ccc;">
+            </div>
             <div id="annotation-pane" style="display: none;">
                 <h3>Capabilities</h3>
                 <p class="annotation-instructions">
@@ -47,22 +49,22 @@
                 </p>
                 <form id="capabilities-form">
                     <label class="capability-checkbox">
-                        <input type="checkbox" value="retrieval: context"> Retrieval: Context
+                        <input type="checkbox" value="retrieval: context"> Discriminating relevant context
                     </label>
                     <label class="capability-checkbox">
-                        <input type="checkbox" value="retrieval: memory"> Retrieval: Memory
+                        <input type="checkbox" value="retrieval: memory"> Recalling from memory
                     </label>
                     <label class="capability-checkbox">
-                        <input type="checkbox" value="reasoning: analogy"> Reasoning: Analogy
+                        <input type="checkbox" value="reasoning: analogy"> Analogical Reasoning
                     </label>
                     <label class="capability-checkbox">
-                        <input type="checkbox" value="reasoning: deduction"> Reasoning: Deduction
+                        <input type="checkbox" value="reasoning: deduction"> Deductive Reasoning
                     </label>
                     <label class="capability-checkbox">
-                        <input type="checkbox" value="reasoning: math"> Reasoning: Math
+                        <input type="checkbox" value="reasoning: math"> Mathematical Reasoning
                     </label>
                     <label class="capability-checkbox">
-                        <input type="checkbox" value="reasoning: causal"> Reasoning: Causal
+                        <input type="checkbox" value="reasoning: causal"> Causal Reasoning
                     </label>
                     <!-- New Yes/No Question -->
                     <div class="yes-no-question">
@@ -111,7 +113,7 @@
                     </ul>
                 </li>
                 <hr>
-                <li><strong>Recall from memory:</strong>
+                <li><strong>Recalling from memory:</strong>
                     Forecasts would rely on facts from memory or a knowledge base, such as relevant physical constants
                     or quantitative laws.
                     <ul style="font-size: 0.9em; margin-left: 25px;">
