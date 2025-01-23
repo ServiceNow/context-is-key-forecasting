@@ -30,8 +30,8 @@
 
         <!-- Annotation Instruction -->
         <p class="progress-instruction">
-            Please inspect the task below and annotate it by selecting which capabilities are required to infer the
-            ground truth time series based on the provided contextual information and history. Before proceeding, please
+            Please inspect the task below and annotate it by selecting which capabilities are required to
+            interpret the context and accurately forecast the time series. Before proceeding, please
             read the <a href="#" class="definition-link" onclick="showDefinitions()">definition</a> of each capability
             carefully.
             Once you are done, please download the results and send us the json file.
@@ -90,30 +90,125 @@
             <span class="close-button" onclick="closeDefinitions()">&times;</span>
             <h2>Capability Definitions</h2>
             <ul>
-                <li><strong>Retrieval: Context:</strong> Forecasts would rely on a human's ability to retrieve relevant
-                    information from the context and distinguish it from irrelevant information.</li>
-                <li><strong>Retrieval: Memory:</strong> Forecasts would rely on facts from memory or a knowledge base,
-                    such as relevant physical constants or quantitative laws.</li>
-                <li><strong>Reasoning: Deduction:</strong>Forecasts would rely on a human's ability to draw valid
-                    inferences from the context, e.g. inferring from the context that certain values are logically
-                    impossible to occur.</li>
-                <li><strong>Reasoning: Causal:</strong> Forecasts would rely on a human's ability to reason about cause
-                    and effect from the context, such as reasoning about the impacts of various actions described in the
-                    context.</li>
-                <li><strong>Reasoning: Math:</strong>Forecasts would rely on a human's ability to perform mathematics
-                    over the context, such as arithmetic or solving equations.</li>
-                <li><strong>Reasoning: Analogy:</strong>Forecasts would rely on a human's ability to forecast by way of
-                    analogy between entities or events, for instance, applying knowledge from a past event that is
-                    similar to an upcoming one.</li>
+                <li><strong>Discriminating relevant context:</strong>
+                    Forecasts would rely on a human's ability to retrieve relevant information from the context and
+                    distinguish it from irrelevant information.
+                    <ul style="font-size: 0.9em; margin-left: 25px;">
+                        <li><strong>Forecast total production for tableware manufacturing:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“The warehouse is U-shaped. There’s a huge order for which production will ramp up
+                                    starting next week. Napkins are typically 4-fold.”</li>
+                            </ul>
+                        </li>
+                        <li><strong>Forecast air passenger traffic:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“The plane for this route has a maximum of 50 passengers. In past years, the air
+                                    traffic around this time was about 40 passengers per flight. The plane is blue.”
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Recall from memory:</strong>
+                    Forecasts would rely on facts from memory or a knowledge base, such as relevant physical constants
+                    or quantitative laws.
+                    <ul style="font-size: 0.9em; margin-left: 25px;">
+                        <li><strong>Forecast total production for tableware manufacturing:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“Production is currently in May. Note that production is positively correlated with
+                                    temperature.”</li>
+                            </ul>
+                        </li>
+                        <li><strong>Forecast air passenger traffic:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“Travel on this route is usually higher right before the holidays. Forecast for
+                                    December and January.”</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><strong>Deductive Reasoning:</strong>
+                    Forecasts would rely on a human’s ability to draw valid inferences from the context, e.g. inferring
+                    from the context that certain values are logically impossible to occur.
+                    <ul style="font-size: 0.9em; margin-left: 25px;">
+                        <li><strong>Forecast total production for tableware manufacturing:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“Historically, the machines were under maintenance on Mondays, but not anymore.”
+                                </li>
+                                <li>"The machines are currently under maintenance."</li>
+                            </ul>
+                        </li>
+                        <li><strong>Forecast air passenger traffic:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“An ongoing blizzard is about to end.”</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Causal Reasoning:</strong>
+                    Forecasts would rely on a human’s ability to reason about cause and effect from the context, such as
+                    reasoning about the impacts of various actions described in the context.
+                    <ul style="font-size: 0.9em; margin-left: 25px;">
+                        <li><strong>Forecast total production for tableware manufacturing:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“The production is specified by [equations linking inputs to outputs]. The planned
+                                    inputs at times t are [...]”</li>
+                            </ul>
+                        </li>
+                        <li><strong>Forecast air passenger traffic:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“Since both air ticket and ice cream sales spike during summer, the company plans to
+                                    bolster air tickets by subsidizing ice cream sales.”</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Mathematical Reasoning:</strong>
+                    Forecasts would rely on a human’s ability to perform mathematics over the context, such as
+                    arithmetic or solving equations.
+                    <ul style="font-size: 0.9em; margin-left: 25px;">
+                        <li><strong>Forecast total production for tableware manufacturing:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“Production is expected to ramp up 10% per day over the next five days.”</li>
+                            </ul>
+                        </li>
+                        <li><strong>Forecast air passenger traffic:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“The previous year’s total traffic per flight was 3000.”</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Analogical Reasoning:</strong>
+                    Forecasts would rely on a human's ability to forecast by way of analogy between entities or events,
+                    for instance, applying knowledge from a past event that is similar to an upcoming one.
+                    <ul style="font-size: 0.9em; margin-left: 25px;">
+                        <li><strong>Forecast total production for tableware manufacturing:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“Here’s the historical production for a similar plant in a similar town.”</li>
+                            </ul>
+                        </li>
+                        <li><strong>Forecast air passenger traffic:</strong>
+                            <ul style="font-size: 0.9em; margin-left: 25px;">
+                                <li>“Here’s the historical traffic from a similar plane on a similar route.”</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <hr>
                 </li>
-                <li><strong>Useful Context (yes/no):</strong> Does the context enable better forecasts? </li>
+                <li><strong>Useful Context (yes/no):</strong>
+                    Does the context enable better forecasts?
+                </li>
             </ul>
         </div>
     </div>
-
     <!-- Include Scripts -->
+
+
+
     <script src="./scripts.js"></script>
 </body>
 
