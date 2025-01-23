@@ -86,9 +86,10 @@
 
     <!-- Definitions Modal -->
     <div id="definitions-modal" class="modal" style="display: none;">
-        <div class="modal-content">
+        <div class="modal-content" style="max-height: 80vh; overflow-y: auto;">
             <span class="close-button" onclick="closeDefinitions()">&times;</span>
             <h2>Capability Definitions</h2>
+            <hr>
             <ul>
                 <li><strong>Discriminating relevant context:</strong>
                     Forecasts would rely on a human's ability to retrieve relevant information from the context and
@@ -109,6 +110,7 @@
                         </li>
                     </ul>
                 </li>
+                <hr>
                 <li><strong>Recall from memory:</strong>
                     Forecasts would rely on facts from memory or a knowledge base, such as relevant physical constants
                     or quantitative laws.
@@ -127,7 +129,7 @@
                         </li>
                     </ul>
                 </li>
-
+                <hr>
                 <li><strong>Deductive Reasoning:</strong>
                     Forecasts would rely on a human’s ability to draw valid inferences from the context, e.g. inferring
                     from the context that certain values are logically impossible to occur.
@@ -146,6 +148,7 @@
                         </li>
                     </ul>
                 </li>
+                <hr>
                 <li><strong>Causal Reasoning:</strong>
                     Forecasts would rely on a human’s ability to reason about cause and effect from the context, such as
                     reasoning about the impacts of various actions described in the context.
@@ -164,6 +167,7 @@
                         </li>
                     </ul>
                 </li>
+                <hr>
                 <li><strong>Mathematical Reasoning:</strong>
                     Forecasts would rely on a human’s ability to perform mathematics over the context, such as
                     arithmetic or solving equations.
@@ -180,6 +184,7 @@
                         </li>
                     </ul>
                 </li>
+                <hr>
                 <li><strong>Analogical Reasoning:</strong>
                     Forecasts would rely on a human's ability to forecast by way of analogy between entities or events,
                     for instance, applying knowledge from a past event that is similar to an upcoming one.
@@ -196,9 +201,7 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <hr>
-                </li>
+                <hr>
                 <li><strong>Useful Context (yes/no):</strong>
                     Does the context enable better forecasts?
                 </li>
