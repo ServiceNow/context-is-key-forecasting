@@ -1,4 +1,12 @@
 [
-    {"label": "CC-Qwen-2.5-7B-Instruct (ctx)", "method": "directprompt", "llm": "qwen2.5-7B-Instruct", "use_context": true, "temperature": 1.0, 
-    "batch_size_on_retry":10, "batch_size":10, "n_retries": 10}
+    {
+        "label": "CC-Qwen-2.5-7B-Instruct (ctx)",
+        "method": "directprompt",
+        "llm": "qwen2.5-7B-Instruct",
+        "use_context": true,
+        "temperature": 1.0,
+        "batch_size_on_retry": 10,
+        "batch_size": 10,
+        "n_retries": 10
+    }
 ]

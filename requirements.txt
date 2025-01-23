@@ -21,3 +21,5 @@ h5py
 transformers>4.4.1
 sentencepiece
 lm-format-enforcer
+mamba-ssm
+causal-conv1d>=1.2.0

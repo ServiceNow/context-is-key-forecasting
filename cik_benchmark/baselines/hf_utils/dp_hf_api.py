@@ -5,6 +5,10 @@ from transformers import (
     AutoTokenizer,
     LlamaTokenizerFast,
     MistralForCausalLM,
+    MambaConfig,
+    MambaForCausalLM,
+    Mamba2Config,
+    Mamba2ForCausalLM,
 )
 import torch
 import gc
@@ -35,6 +39,29 @@ LLM_MAP = {
     "Mistral-7B-Instruct-v0.3": "mistralai/Mistral-7B-Instruct-v0.3",
     "falcon-7b-instruct": "tiiuae/falcon-7b-instruct",
     "falcon-40b-instruct": "tiiuae/falcon-40b-instruct",
+    # SSMs
+    # "Hymba-1.5B-Base": "nvidia/Hymba-1.5B-Base", # needs FlexAttention installation
+    # "Hymba-1.5B-Instruct": "nvidia/Hymba-1.5B-Instruct", # needs FlexAttention installation
+    # "mamba-2.8B": "state-spaces/mamba-2.8b-hf",
+    # "mamba-1.4B": "state-spaces/mamba-1.4b-hf",
+    # "mamba-790m": "state-spaces/mamba-790m-hf",
+    # "mamba-370m": "state-spaces/mamba-370m-hf",
+    # "mamba-130m": "state-spaces/mamba-130m-hf",
+    # "mamba2-2.7B": "state-spaces/mamba2-2.7b",
+    # "mamba2-1.3B": "state-spaces/mamba2-1.3b",
+    # "mamba2-780m": "state-spaces/mamba2-780m",
+    # "mamba2-370m": "state-spaces/mamba2-370m",
+    # "mamba2-130m": "state-spaces/mamba2-130m",
+    "Zamba-7B-v1": "Zyphra/Zamba-7B-v1",
+    # "Zamba2-7B": "Zyphra/Zamba2-7B",
+    # "Zamba2-2.7B": "Zyphra/Zamba2-2.7B",
+    # "Zamba2-1.2B": "Zyphra/Zamba2-1.2B",
+    # "Zamba2-7B-Instruct": "Zyphra/Zamba2-7B-Instruct",
+    # "Zamba2-2.7B-Instruct": "Zyphra/Zamba2-2.7B-Instruct",
+    # "Zamba2-1.2B-Instruct": "Zyphra/Zamba2-1.2B-Instruct",
+    # "Falcon3-Mamba-7B-Base": "tiiuae/Falcon3-Mamba-7B-Base",
+    # "Falcon3-Mamba-7B-Instruct": "tiiuae/Falcon3-Mamba-7B-Instruct",
+    # "Bamba-9B": "ibm-fms/Bamba-9B",
 }
 
 
@@ -71,6 +98,12 @@ def get_tokenizer(llm_path, llm_type):
     elif "Mistral-7B" in llm_type:
         tokenizer = AutoTokenizer.from_pretrained(llm_path)
     elif "falcon" in llm_type:
+        tokenizer = AutoTokenizer.from_pretrained(llm_path)
+    elif "mamba-" in llm_type:
+        tokenizer = AutoTokenizer.from_pretrained(llm_path)
+    elif "Zamba2-" in llm_type:
+        tokenizer = AutoTokenizer.from_pretrained(llm_path)
+    elif "Zamba-" in llm_type:
         tokenizer = AutoTokenizer.from_pretrained(llm_path)
     else:
         assert False
@@ -132,6 +165,30 @@ def get_model_and_tokenizer(llm_path, llm_type):
     elif "Mistral-Small" in llm_type:
         model = MistralForCausalLM.from_pretrained(
             llm_path, torch_dtype=torch.bfloat16, device_map="auto"
+        )
+    elif "mamba-" in llm_type:
+        model = MambaForCausalLM.from_pretrained(
+            llm_path,
+            device_map="auto",
+            torch_dtype=torch.float16,
+        )
+    elif "mamba2-" in llm_type:
+        model = Mamba2ForCausalLM.from_pretrained(
+            llm_path,
+            device_map="auto",
+            torch_dtype=torch.float16,
+        )
+    elif "Zamba2-" in llm_type:
+        model = AutoModelForCausalLM.from_pretrained(
+            llm_path,
+            device_map="auto",
+            torch_dtype=torch.bfloat16,
+        )
+    elif "Zamba-" in llm_type:
+        model = AutoModelForCausalLM.from_pretrained(
+            llm_path,
+            device_map="auto",
+            torch_dtype=torch.bfloat16,
         )
     else:
         assert False

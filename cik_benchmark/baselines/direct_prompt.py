@@ -2,6 +2,7 @@
 Direct prompt method
 
 """
+
 import inspect
 import logging
 import numpy as np
@@ -124,19 +125,52 @@ def huggingface_instruct_model_client(
     )
 
     # Now extract the assistant's reply
-    choices = []
-    for response in pipe(
-        [messages] * n,
-        max_length=max_tokens,
-        temperature=temperature,
-        prefix_allowed_tokens_fn=prefix_function,
-        batch_size=n,
-    ):
-        # Create a message object
-        message = SimpleNamespace(content=response[0]["generated_text"][-1]["content"])
-        # Create a choice object
-        choice = SimpleNamespace(message=message)
-        choices.append(choice)
+
+    # TODO: verify
+    # if pipe has no chat_template, get the context from the messages and append it to the prompt.
+    # then complete the prompt with the model
+    if hasattr(pipe, "chat_template"):
+
+        choices = []
+        for response in pipe(
+            [messages] * n,
+            max_length=max_tokens,
+            temperature=temperature,
+            prefix_allowed_tokens_fn=prefix_function,
+            batch_size=n,
+        ):
+            # Create a message object
+            message = SimpleNamespace(
+                content=response[0]["generated_text"][-1]["content"]
+            )
+            # Create a choice object
+            choice = SimpleNamespace(message=message)
+            choices.append(choice)
+
+    else:
+        # Get the context from the messages
+        context = ""
+        for message in messages:
+            context += message["content"] + " "  # directly concatenate the context
+
+        # Generate completions
+        choices = []
+        responses = pipe(
+            [context] * n,
+            max_length=max_tokens,
+            temperature=temperature,
+            prefix_allowed_tokens_fn=prefix_function,
+            batch_size=n,
+        )
+
+        for response in responses:
+            # Create a message object
+            message = SimpleNamespace(
+                content=response[0]["generated_text"][len(context) :].strip()
+            )
+            # Create a choice object
+            choice = SimpleNamespace(message=message)
+            choices.append(choice)
 
     # Create a usage object (we can estimate tokens)
     usage = SimpleNamespace(
