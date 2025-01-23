@@ -82,24 +82,31 @@ function saveAnnotationsAndNext() {
         return;
     }
 
-    // Get selected capabilities
+    // Get the form
     const form = document.getElementById("capabilities-form");
+
+    // Get selected capabilities (checkboxes)
     const selectedCapabilities = Array.from(form.elements)
-        .filter(input => input.checked)
+        .filter(input => input.checked && input.type === "checkbox")
         .map(input => input.value);
 
-    // Save annotations to the dictionary
+    // Get selected yes/no radio
+    const selectedRadio = Array.from(form.elements)
+        .find(input => input.checked && input.type === "radio")?.value;
+
+    // Save both sets of data into the dictionary
     dictionary[currentTask].annotations = selectedCapabilities;
+    dictionary[currentTask].yesNoResponse = selectedRadio;
+
+    // Update localStorage
     localStorage.setItem("cik_capability_annotations", JSON.stringify(dictionary));
 
-    // Reset checkboxes
+    // Reset form and re-check button state
     form.reset();
     toggleNextButtonState();
 
-    // Update the progress bar
+    // Update progress bar and move on
     updateProgressBar();
-
-    // Proceed to the next task
     openRandomUnannotatedTask();
 }
 
@@ -221,20 +228,26 @@ function downloadJSON() {
 function toggleNextButtonState() {
     const form = document.getElementById("capabilities-form");
     const checkboxes = Array.from(form.elements).filter(input => input.type === "checkbox");
+    const yesNoButtons = Array.from(form.elements).filter(input => input.type === "radio");
     const nextButton = form.querySelector(".next-button");
 
     // Enable the Next button if at least one checkbox is checked
     const isAnyChecked = checkboxes.some(checkbox => checkbox.checked);
-    nextButton.disabled = !isAnyChecked; // Disable if none are checked
+    const isYesNoSelected = yesNoButtons.some(button => button.checked);
+    nextButton.disabled = !isAnyChecked || !isYesNoSelected; // Disable if no checkboxes are checked and no radio buttons are selected
 }
 
 // Attach event listeners to checkboxes to update the button state
 function initializeCheckboxListeners() {
     const form = document.getElementById("capabilities-form");
     const checkboxes = Array.from(form.elements).filter(input => input.type === "checkbox");
+    const yesNoButtons = Array.from(form.elements).filter(input => input.type === "radio");
 
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener("change", toggleNextButtonState);
+    });
+    yesNoButtons.forEach(button => {
+        button.addEventListener("change", toggleNextButtonState);
     });
 
     // Ensure the button state is updated on page load

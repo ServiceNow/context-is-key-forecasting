@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIK Capability Annotations</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div id="container">
         <h1 style="padding-bottom: 20px;">Context is Key Benchmark - Annotator Platform</h1>
@@ -28,7 +30,10 @@
 
         <!-- Annotation Instruction -->
         <p class="progress-instruction">
-            Please inspect the task below and annotate it by selecting which capabilities are required to infer the ground truth time series based on the provided contextual information and history. Before proceeding, please read the <a href="#" class="definition-link" onclick="showDefinitions()">definition</a> of each capability carefully.
+            Please inspect the task below and annotate it by selecting which capabilities are required to infer the
+            ground truth time series based on the provided contextual information and history. Before proceeding, please
+            read the <a href="#" class="definition-link" onclick="showDefinitions()">definition</a> of each capability
+            carefully.
             Once you are done, please download the results and send us the json file.
         </p>
 
@@ -41,9 +46,6 @@
                     Please select all that apply.
                 </p>
                 <form id="capabilities-form">
-                    <label class="capability-checkbox">
-                        <input type="checkbox" value="instruction following"> Instruction Following
-                    </label>
                     <label class="capability-checkbox">
                         <input type="checkbox" value="retrieval: context"> Retrieval: Context
                     </label>
@@ -62,8 +64,19 @@
                     <label class="capability-checkbox">
                         <input type="checkbox" value="reasoning: causal"> Reasoning: Causal
                     </label>
+                    <!-- New Yes/No Question -->
+                    <div class="yes-no-question">
+                        <p>Useful Context</p>
+                        <label class="yes-no-option">
+                            <input type="radio" name="test-question" value="yes"> Yes
+                        </label>
+                        <label class="yes-no-option">
+                            <input type="radio" name="test-question" value="no"> No
+                        </label>
+                    </div>
                     <div class="button-container">
-                        <button type="button" class="next-button" onclick="saveAnnotationsAndNext()" disabled>Save</button>
+                        <button type="button" class="next-button" onclick="saveAnnotationsAndNext()"
+                            disabled>Save</button>
                         <button type="button" class="skip-button" onclick="skipTask()">Skip</button>
                     </div>
                 </form>
@@ -77,13 +90,21 @@
             <span class="close-button" onclick="closeDefinitions()">&times;</span>
             <h2>Capability Definitions</h2>
             <ul>
-                <li><strong>Instruction Following:</strong> Ability to execute tasks based on explicit instructions.</li>
-                <li><strong>Retrieval: Context:</strong> Extracting relevant information from external sources to contextualize the task.</li>
-                <li><strong>Retrieval: Memory:</strong> Leveraging stored or previously learned information to solve the task.</li>
-                <li><strong>Reasoning: Analogy:</strong> Drawing parallels between similar situations to deduce solutions.</li>
-                <li><strong>Reasoning: Deduction:</strong> Applying logical rules to derive conclusions from given premises.</li>
-                <li><strong>Reasoning: Math:</strong> Solving problems involving numerical and mathematical reasoning.</li>
-                <li><strong>Reasoning: Causal:</strong> Identifying and reasoning about cause-and-effect relationships.</li>
+                <li><strong>Retrieval: Context:</strong> Forecasts would rely on a human's ability to retrieve relevant
+                    information from the context and distinguish it from irrelevant information.</li>
+                <li><strong>Retrieval: Memory:</strong> Forecasts would rely on facts from memory or a knowledge base,
+                    such as relevant physical constants or quantitative laws.</li>
+                <li><strong>Reasoning: Deduction:</strong>Forecasts would rely on a human's ability to draw valid
+                    inferences from the context, e.g. inferring from the context that certain values are logically
+                    impossible to occur.</li>
+                <li><strong>Reasoning: Causal:</strong> Forecasts would rely on a human's ability to reason about cause
+                    and effect from the context, such as reasoning about the impacts of various actions described in the
+                    context.</li>
+                <li><strong>Reasoning: Math:</strong>Forecasts would rely on a human's ability to perform mathematics
+                    over the context, such as arithmetic or solving equations.</li>
+                <li><strong>Reasoning: Analogy:</strong>Forecasts would rely on a human's ability to forecast by way of
+                    analogy between entities or events, for instance, applying knowledge from a past event that is
+                    similar to an upcoming one.</li>
             </ul>
         </div>
     </div>
@@ -91,4 +112,5 @@
     <!-- Include Scripts -->
     <script src="./scripts.js"></script>
 </body>
+
 </html>

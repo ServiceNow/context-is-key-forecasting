@@ -101,15 +101,24 @@ h2 {
 .progress-instruction {
     font-size: 18px;
     font-weight: 500;
-    color: #555; /* Neutral dark gray for text */
-    background-color: #fff3cd; /* Light yellow background */
-    border: 1px solid #ffeeba; /* Slightly darker yellow border */
-    padding: 15px 20px; /* Add padding inside the box */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin: 25px auto; /* Add spacing around and center the box */
-    max-width: 800px; /* Limit the width for a clean look */
-    text-align: left; /* Align text to the left */
+    color: #555;
+    /* Neutral dark gray for text */
+    background-color: #fff3cd;
+    /* Light yellow background */
+    border: 1px solid #ffeeba;
+    /* Slightly darker yellow border */
+    padding: 15px 20px;
+    /* Add padding inside the box */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    margin: 25px auto;
+    /* Add spacing around and center the box */
+    max-width: 800px;
+    /* Limit the width for a clean look */
+    text-align: left;
+    /* Align text to the left */
 }
 
 .content-wrapper {
@@ -158,6 +167,22 @@ h2 {
     font-weight: 500;
 }
 
+.capability-switch {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.capability-switch input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.capability-switch label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
 .next-button {
     margin-top: 20px;
     padding: 10px 20px;
@@ -175,10 +200,14 @@ h2 {
 }
 
 .next-button:disabled {
-    background-color: #d6d6d6; /* Light gray to show it's disabled */
-    color: #999; /* Muted text color */
-    cursor: not-allowed; /* Indicate the button cannot be clicked */
-    opacity: 0.6; /* Reduce opacity for a clearer disabled effect */
+    background-color: #d6d6d6;
+    /* Light gray to show it's disabled */
+    color: #999;
+    /* Muted text color */
+    cursor: not-allowed;
+    /* Indicate the button cannot be clicked */
+    opacity: 0.6;
+    /* Reduce opacity for a clearer disabled effect */
 }
 
 .skip-button {
@@ -199,15 +228,20 @@ h2 {
 
 .button-container {
     display: flex;
-    justify-content: center; /* Center both buttons horizontally */
-    gap: 10px; /* Add space between buttons */
-    margin-top: 20px; /* Add some spacing above the buttons */
+    justify-content: center;
+    /* Center both buttons horizontally */
+    gap: 10px;
+    /* Add space between buttons */
+    margin-top: 20px;
+    /* Add some spacing above the buttons */
 }
 
 .next-button,
 .skip-button {
-    flex: 1; /* Ensure both buttons have equal width */
-    max-width: 150px; /* Optional: Limit maximum button width */
+    flex: 1;
+    /* Ensure both buttons have equal width */
+    max-width: 150px;
+    /* Optional: Limit maximum button width */
 }
 
 .modal {
@@ -265,7 +299,10 @@ h2 {
 }
 
 #container {
-    position: relative; /* Ensure proper positioning for scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
-    max-height: 100vh; /* Prevent overflow beyond the viewport */
+    position: relative;
+    /* Ensure proper positioning for scrolling */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    max-height: 100vh;
+    /* Prevent overflow beyond the viewport */
 }
