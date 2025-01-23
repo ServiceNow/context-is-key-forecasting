@@ -113,6 +113,7 @@ function saveAnnotationsAndNext() {
 // Skip the current task and load a random one
 function skipTask() {
     document.getElementById("capabilities-form").reset();
+    updateProgressBar();
     openRandomUnannotatedTask();
 }
 
