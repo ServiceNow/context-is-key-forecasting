@@ -170,7 +170,7 @@ class SensorTrendAccumulationTask(UnivariateCRPSTask):
 
     """
 
-    _context_sources = UnivariateCRPSTask._context_sources + ["c_cov"]
+    _context_sources = UnivariateCRPSTask._context_sources + ["c_cov", "c_f"]
     _skills = UnivariateCRPSTask._skills + ["instruction following", "reasoning: math"]
     __version__ = "0.0.3"  # Modification will trigger re-caching
 

@@ -65,7 +65,7 @@ class BaseFREDCountyUsingStateData(UnivariateCRPSTask):
     relevant state (and maybe some other states).
     """
 
-    _context_sources = ["c_f", "c_cov"]
+    _context_sources = ["c_cov"]
     # State vs county is not a clear cut analogy, but it is close
     _skills = UnivariateCRPSTask._skills + ["retrieval: memory"]
     __version__ = "0.0.2"  # Modification will trigger re-caching

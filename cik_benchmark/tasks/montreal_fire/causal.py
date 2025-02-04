@@ -46,7 +46,6 @@ class MontrealFireCausalConfoundingTask(MontrealFireShortHistoryTask):
 
     _context_sources = MontrealFireShortHistoryTask._context_sources + [
         "c_cov",
-        "c_f",
     ]
     _skills = MontrealFireShortHistoryTask._skills + [
         "reasoning: causal",

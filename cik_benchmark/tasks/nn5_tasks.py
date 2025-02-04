@@ -105,7 +105,7 @@ class ATMBuildingClosedTask(CashDepletedinATMScenarioTask):
     Same as CashDepletedinATMScenarioTask, except that the context says the building is closed, and the model needs to use deduction to solve the task
     """
 
-    _context_sources = UnivariateCRPSTask._context_sources + ["c_i", "c_f"]
+    _context_sources = UnivariateCRPSTask._context_sources + ["c_i", "c_cov"]
     _skills = UnivariateCRPSTask._skills + ["reasoning: deduction"]
     __version__ = "0.0.2"  # Modification will trigger re-caching
 
