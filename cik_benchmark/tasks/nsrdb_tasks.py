@@ -65,7 +65,7 @@ class BaseIrradianceFromCloudStatus(UnivariateCRPSTask):
     _context_sources = ["c_i", "c_cov"]
     # Part of the task involve understanding the impact of longer cloudy period (denser clouds)
     _skills = UnivariateCRPSTask._skills + ["reasoning: deduction"]
-    __version__ = "0.0.3"  # Modification will trigger re-caching
+    __version__ = "0.0.4"  # Modification will trigger re-caching
 
     # Those must be overriden
     irradiance_column: str = ""
@@ -188,6 +188,9 @@ class BaseIrradianceFromCloudStatus(UnivariateCRPSTask):
         # Shift the dates by one day forward
         history_series.index = history_series.index + pd.Timedelta(days=1)
         future_series.index = future_series.index + pd.Timedelta(days=1)
+
+        # Also shift the dataframe which will be used by get_scenario to get the cloud status
+        df.index = df.index + pd.Timedelta(days=1)
 
         # Instantiate the class variables
         self.past_time = history_series.to_frame()
