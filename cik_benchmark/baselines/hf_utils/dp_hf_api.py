@@ -7,8 +7,8 @@ from transformers import (
     MistralForCausalLM,
     MambaConfig,
     MambaForCausalLM,
-    Mamba2Config,
-    Mamba2ForCausalLM,
+    # Mamba2Config,
+    # Mamba2ForCausalLM,
 )
 import torch
 import gc
@@ -40,8 +40,8 @@ LLM_MAP = {
     "falcon-7b-instruct": "tiiuae/falcon-7b-instruct",
     "falcon-40b-instruct": "tiiuae/falcon-40b-instruct",
     # SSMs
-    # "Hymba-1.5B-Base": "nvidia/Hymba-1.5B-Base", # needs FlexAttention installation
-    # "Hymba-1.5B-Instruct": "nvidia/Hymba-1.5B-Instruct", # needs FlexAttention installation
+    # "Hymba-1.5B-Base": "nvidia/Hymba-1.5B-Base",  # needs FlexAttention installation
+    # "Hymba-1.5B-Instruct": "nvidia/Hymba-1.5B-Instruct",  # needs FlexAttention installation
     # "mamba-2.8B": "state-spaces/mamba-2.8b-hf",
     # "mamba-1.4B": "state-spaces/mamba-1.4b-hf",
     # "mamba-790m": "state-spaces/mamba-790m-hf",
@@ -52,7 +52,7 @@ LLM_MAP = {
     # "mamba2-780m": "state-spaces/mamba2-780m",
     # "mamba2-370m": "state-spaces/mamba2-370m",
     # "mamba2-130m": "state-spaces/mamba2-130m",
-    "Zamba-7B-v1": "Zyphra/Zamba-7B-v1",
+    # "Zamba-7B-v1": "Zyphra/Zamba-7B-v1",
     # "Zamba2-7B": "Zyphra/Zamba2-7B",
     # "Zamba2-2.7B": "Zyphra/Zamba2-2.7B",
     # "Zamba2-1.2B": "Zyphra/Zamba2-1.2B",
@@ -99,12 +99,16 @@ def get_tokenizer(llm_path, llm_type):
         tokenizer = AutoTokenizer.from_pretrained(llm_path)
     elif "falcon" in llm_type:
         tokenizer = AutoTokenizer.from_pretrained(llm_path)
-    elif "mamba-" in llm_type:
-        tokenizer = AutoTokenizer.from_pretrained(llm_path)
-    elif "Zamba2-" in llm_type:
-        tokenizer = AutoTokenizer.from_pretrained(llm_path)
-    elif "Zamba-" in llm_type:
-        tokenizer = AutoTokenizer.from_pretrained(llm_path)
+    # elif "mamba-" in llm_type:
+    #     tokenizer = AutoTokenizer.from_pretrained(llm_path)
+    # elif "Zamba2-" in llm_type:
+    #     tokenizer = AutoTokenizer.from_pretrained(llm_path)
+    # elif "Zamba-" in llm_type:
+    #     tokenizer = AutoTokenizer.from_pretrained(llm_path)
+    # elif "Hymba-" in llm_type:
+    #     tokenizer = AutoTokenizer.from_pretrained(
+    #         llm_path, trust_remote_code=True, parallelism="none"
+    #     )
     else:
         assert False
 
@@ -166,30 +170,36 @@ def get_model_and_tokenizer(llm_path, llm_type):
         model = MistralForCausalLM.from_pretrained(
             llm_path, torch_dtype=torch.bfloat16, device_map="auto"
         )
-    elif "mamba-" in llm_type:
-        model = MambaForCausalLM.from_pretrained(
-            llm_path,
-            device_map="auto",
-            torch_dtype=torch.float16,
-        )
-    elif "mamba2-" in llm_type:
-        model = Mamba2ForCausalLM.from_pretrained(
-            llm_path,
-            device_map="auto",
-            torch_dtype=torch.float16,
-        )
-    elif "Zamba2-" in llm_type:
-        model = AutoModelForCausalLM.from_pretrained(
-            llm_path,
-            device_map="auto",
-            torch_dtype=torch.bfloat16,
-        )
-    elif "Zamba-" in llm_type:
-        model = AutoModelForCausalLM.from_pretrained(
-            llm_path,
-            device_map="auto",
-            torch_dtype=torch.bfloat16,
-        )
+    # elif "mamba-" in llm_type:
+    #     model = MambaForCausalLM.from_pretrained(
+    #         llm_path,
+    #         device_map="auto",
+    #         torch_dtype=torch.float16,
+    #     )
+    # elif "mamba2-" in llm_type:
+    #     model = Mamba2ForCausalLM.from_pretrained(
+    #         llm_path,
+    #         device_map="auto",
+    #         torch_dtype=torch.float16,
+    #     )
+    # elif "Zamba2-" in llm_type:
+    #     model = AutoModelForCausalLM.from_pretrained(
+    #         llm_path,
+    #         device_map="auto",
+    #         torch_dtype=torch.bfloat16,
+    #     )
+    # elif "Zamba-" in llm_type:
+    #     model = AutoModelForCausalLM.from_pretrained(
+    #         llm_path,
+    #         device_map="auto",
+    #         torch_dtype=torch.bfloat16,
+    #     )
+    # elif "Hymba-" in llm_type:
+    #     model = AutoModelForCausalLM.from_pretrained(
+    #         llm_path,
+    #         trust_remote_code=True,
+    #     )
+    #     model = model.cuda().to(torch.bfloat16)
     else:
         assert False
 
