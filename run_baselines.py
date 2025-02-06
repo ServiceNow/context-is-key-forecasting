@@ -10,12 +10,6 @@ import logging
 import numpy as np
 import pandas as pd
 
-import debugpy
-
-# print("Waiting for debugger attach")
-# debugpy.listen(5679)
-# debugpy.wait_for_client()
-# print("Debugger attached")
 
 from collections import defaultdict
 from pathlib import Path
