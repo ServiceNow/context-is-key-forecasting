@@ -5,8 +5,8 @@ from transformers import (
     AutoTokenizer,
     LlamaTokenizerFast,
     MistralForCausalLM,
-    MambaConfig,
-    MambaForCausalLM,
+    # MambaConfig,
+    # MambaForCausalLM,
     # Mamba2Config,
     # Mamba2ForCausalLM,
 )
