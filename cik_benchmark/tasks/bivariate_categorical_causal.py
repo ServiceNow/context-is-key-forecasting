@@ -273,10 +273,10 @@ class BivariateCategoricalLinSVARBaseTask(CausalUnivariateCRPSTask):
         return np.array(array), (regime_values, regime_lengths)
 
     def generate_time_series(
-        self, W, history_length, n_samples, noise_type="gauss", noise_scale=0.1
+        self, weights, history_length, n_samples, noise_type="gauss", noise_scale=0.1
     ):
-        d = self.causal_config["num_nodes"]
-        L = self.causal_config["lag"]
+        num_nodes = self.causal_config["num_nodes"]
+        num_lags = self.causal_config["lag"]
         total_length = self.causal_config["burn_in"] + 2 * n_samples
         pred_length = n_samples - history_length
 
@@ -327,16 +327,16 @@ class BivariateCategoricalLinSVARBaseTask(CausalUnivariateCRPSTask):
             [historical_covariates, future_covariates]
         )  # (total_length, )
 
-        inst_W, lagged_W = W[0], W[1:]
-        lagged_W = lagged_W.reshape(L * d, d)
-        assert inst_W.shape == (d, d)
+        inst_W, lagged_W = weights[0], weights[1:]
+        lagged_W = lagged_W.reshape(num_lags * num_nodes, num_nodes)
+        assert inst_W.shape == (num_nodes, num_nodes)
 
-        X = np.zeros([total_length, d])
+        X = np.zeros([total_length, num_nodes])
         # idx 0 is covariate and idx 1 is causal variable
         X[:, 0] = covariate_values
 
-        Xlags = np.zeros([total_length, L, d])
-        Xlags = Xlags.reshape(total_length, L * d)
+        Xlags = np.zeros([total_length, num_lags, num_nodes])
+        Xlags = Xlags.reshape(total_length, num_lags * num_nodes)
 
         g_intra = nx.DiGraph(inst_W)
         g_inter = nx.bipartite.from_biadjacency_matrix(
@@ -352,7 +352,7 @@ class BivariateCategoricalLinSVARBaseTask(CausalUnivariateCRPSTask):
 
                 else:
                     parents = list(g_intra.predecessors(j))
-                    parents_prev = list(g_inter.predecessors(j + L * d))
+                    parents_prev = list(g_inter.predecessors(j + num_lags * num_nodes))
 
                     X[t, j] = (
                         +X[t, parents] @ inst_W[parents, j]
@@ -367,7 +367,9 @@ class BivariateCategoricalLinSVARBaseTask(CausalUnivariateCRPSTask):
                         X[t, j] = X[t, j] + self.random.gumbel(scale=noise_scale)
 
             if (t + 1) < total_length:
-                Xlags[t + 1, :] = np.concatenate([X[t, :], Xlags[t, :]])[: d * L]
+                Xlags[t + 1, :] = np.concatenate([X[t, :], Xlags[t, :]])[
+                    : num_nodes * num_lags
+                ]
 
         X_post_burn_in = X[-n_samples:, :]
         return X_post_burn_in, historical_covariates[0], (hist_cov_desc, pred_cov_desc)
