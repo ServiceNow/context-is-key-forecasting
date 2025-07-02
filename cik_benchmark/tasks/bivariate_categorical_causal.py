@@ -174,7 +174,7 @@ class BivariateCategoricalLinSVARBaseTask(CausalUnivariateCRPSTask):
     [hist.. | pred...]
     """
 
-    __version__ = "0.0.3"  # Modification will trigger re-caching
+    __version__ = "0.0.4"  # Modification will trigger re-caching
 
     def __init__(self, fixed_config: dict = None, seed: int = None):
         """
