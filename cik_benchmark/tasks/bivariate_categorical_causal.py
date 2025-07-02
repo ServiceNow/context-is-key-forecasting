@@ -304,24 +304,7 @@ class BivariateCategoricalLinSVARBaseTask(CausalUnivariateCRPSTask):
             hist_regime_values, hist_regime_lengths, max_length=history_length
         )
 
-        hist_start_timestamp = datetime.strptime(self.start_date, "%Y-%m-%d")
-        hist_cov_desc = verbalize_variable_values(
-            trunc_hist_values,
-            trunc_hist_lengths,
-            current_date=hist_start_timestamp,
-            increment="daily",
-        )
-
-        num_hist_days = trunc_hist_lengths.sum().item()
-        pred_start_timestamp = hist_start_timestamp + timedelta(days=num_hist_days)
-
         pred_regime_values, pred_regime_lengths = pred_regime_details
-        pred_cov_desc = verbalize_variable_values(
-            pred_regime_values,
-            pred_regime_lengths,
-            current_date=pred_start_timestamp,
-            increment="daily",
-        )
 
         covariate_values = np.concatenate(
             [historical_covariates, future_covariates]
@@ -372,7 +355,14 @@ class BivariateCategoricalLinSVARBaseTask(CausalUnivariateCRPSTask):
                 ]
 
         X_post_burn_in = X[-n_samples:, :]
-        return X_post_burn_in, historical_covariates[0], (hist_cov_desc, pred_cov_desc)
+        return (
+            X_post_burn_in,
+            historical_covariates[0],
+            (
+                (trunc_hist_values, trunc_hist_lengths),
+                (pred_regime_values, pred_regime_lengths),
+            ),
+        )
 
     def random_instance(self):
         """
@@ -423,7 +413,7 @@ class BivariateCategoricalLinSVARBaseTask(CausalUnivariateCRPSTask):
             try:
                 W = self.init_weights(full_graph)
 
-                X_post_burn_in, const_hist_value, cov_desc = self.generate_time_series(
+                X_post_burn_in, const_hist_value, covs = self.generate_time_series(
                     W, history_length, n_samples, noise_type, noise_scale
                 )
 
@@ -470,18 +460,40 @@ class BivariateCategoricalLinSVARBaseTask(CausalUnivariateCRPSTask):
         self.background = background
 
         self.scenario = self.get_scenario(
-            const_hist_value, history_length, pred_length, cov_desc, data_range
+            const_hist_value, history_length, pred_length, covs, data_range
         )
         self.scenario += " " + self.get_causal_context(W, L)
         self.constraints = None
 
     def get_scenario(
-        self, const_hist_value, history_length, pred_length, cov_desc, data_range
+        self, const_hist_value, history_length, pred_length, covs, data_range
     ):
-        hist_cov_desc_list, pred_cov_desc_list = cov_desc
+        trunc_hist_values, trunc_hist_lengths = covs[0]
+        pred_regime_values, pred_regime_lengths = covs[1]
+
+        normalized_trunc_hist_values = [val / data_range for val in trunc_hist_values]
+        normalized_pred_regime_values = [val / data_range for val in pred_regime_values]
+
+        hist_start_timestamp = datetime.strptime(self.start_date, "%Y-%m-%d")
+        num_hist_days = trunc_hist_lengths.sum().item()
+        pred_start_timestamp = hist_start_timestamp + timedelta(days=num_hist_days)
+
+        # Create a description of the covariates
+        hist_cov_desc_list = verbalize_variable_values(
+            normalized_trunc_hist_values,
+            trunc_hist_lengths,
+            current_date=hist_start_timestamp,
+            increment="daily",
+        )
+
+        pred_cov_desc_list = verbalize_variable_values(
+            normalized_pred_regime_values,
+            pred_regime_lengths,
+            current_date=pred_start_timestamp,
+            increment="daily",
+        )
+
         # Normalize each covariate value by data_range
-        hist_cov_desc_list = [str(float(v) / data_range) for v in hist_cov_desc_list]
-        pred_cov_desc_list = [str(float(v) / data_range) for v in pred_cov_desc_list]
         pred_cov_desc = ", ".join(pred_cov_desc_list)
 
         line1 = f"The task is to forecast the value of the variable X_{self.causal_config['num_nodes'] - 1} at time t, given the values of the covariate X_0 and the variable X_{self.causal_config['num_nodes'] - 1} itself at times t-1, ... t-{self.causal_config['lag']}."
