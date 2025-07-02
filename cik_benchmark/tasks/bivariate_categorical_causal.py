@@ -470,13 +470,18 @@ class BivariateCategoricalLinSVARBaseTask(CausalUnivariateCRPSTask):
         self.background = background
 
         self.scenario = self.get_scenario(
-            const_hist_value, history_length, pred_length, cov_desc
+            const_hist_value, history_length, pred_length, cov_desc, data_range
         )
         self.scenario += " " + self.get_causal_context(W, L)
         self.constraints = None
 
-    def get_scenario(self, const_hist_value, history_length, pred_length, cov_desc):
+    def get_scenario(
+        self, const_hist_value, history_length, pred_length, cov_desc, data_range
+    ):
         hist_cov_desc_list, pred_cov_desc_list = cov_desc
+        # Normalize each covariate value by data_range
+        hist_cov_desc_list = [str(float(v) / data_range) for v in hist_cov_desc_list]
+        pred_cov_desc_list = [str(float(v) / data_range) for v in pred_cov_desc_list]
         pred_cov_desc = ", ".join(pred_cov_desc_list)
 
         line1 = f"The task is to forecast the value of the variable X_{self.causal_config['num_nodes'] - 1} at time t, given the values of the covariate X_0 and the variable X_{self.causal_config['num_nodes'] - 1} itself at times t-1, ... t-{self.causal_config['lag']}."
