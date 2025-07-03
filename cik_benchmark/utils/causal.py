@@ -109,7 +109,7 @@ def verbalize_variable_values(regime_values, regime_lengths, current_date, incre
         from_date_str = current_date.strftime("%Y-%m-%d")
         current_date += timedelta(days=int(regime_lengths[i]) - 1)
         to_date_str = current_date.strftime("%Y-%m-%d")
-        text = f"{regime_values[i]} from {from_date_str} to {to_date_str}"
+        text = f"{regime_values[i]:.4f} from {from_date_str} to {to_date_str}"
         pred_time_covariate_desc.append(text)
         current_date += timedelta(days=1)
 
