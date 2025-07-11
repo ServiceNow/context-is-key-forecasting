@@ -10,8 +10,10 @@ import logging
 import numpy as np
 import pandas as pd
 
+
 from collections import defaultdict
 from pathlib import Path
+
 from cik_benchmark.baselines.direct_prompt import DirectPrompt
 from cik_benchmark.baselines.lag_llama import lag_llama
 from cik_benchmark.baselines.chronos import ChronosForecaster
@@ -207,7 +209,9 @@ def experiment_directprompt(
     dp_forecaster = DirectPrompt(
         model=llm,
         use_context=use_context,
-        token_cost=openai_costs[llm] if llm in openai_costs else {"input": 0.0, "output": 0.0}, # Cost only used for OpenAI models
+        token_cost=(
+            openai_costs[llm] if llm in openai_costs else {"input": 0.0, "output": 0.0}
+        ),  # Cost only used for OpenAI models
         batch_size=batch_size,
         batch_size_on_retry=batch_size_on_retry,
         n_retries=n_retries,
