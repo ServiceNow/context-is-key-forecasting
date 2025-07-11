@@ -4,7 +4,8 @@
 🌐 [Website](https://servicenow.github.io/context-is-key-forecasting) -
 ✉️ [Contact](mailto:arjun.ashok@servicenow.com,andrew.williams1@servicenow.com,alexandre.drouin@servicenow.com) -
 🌟 [Contributors](#contributors) -
-📝 [Citation](#citing-this-work)
+📝 [Citation](#citing-this-work) -
+📦 [ICML 2025 Release](https://github.com/ServiceNow/context-is-key-forecasting/tree/v1.0.0)
 
 ![poster](https://github.com/user-attachments/assets/523ae60a-6c3d-42bf-80b8-83e23d8e7ab0)
 
