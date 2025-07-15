@@ -21,6 +21,7 @@
 
 Here are the updated aggregated benchmark results (equivalent to Table 1 in the paper).
 The full experimental results can also be found [here](./results/results_complete.csv).
+See the [CHANGELOG](./CHANGELOG) for how the benchmark was updated since the ICML 2025 release.
 
 |                                         | Average RCPRS   | Intemporal Information   | Historical Information   | Future Information   | Covariate Information   | Causal Information   |
 |:----------------------------------------|:----------------|:-------------------------|:-------------------------|:---------------------|:------------------------|:---------------------|
