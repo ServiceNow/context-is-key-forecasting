@@ -1,3 +1,7 @@
+Note that there are some model and task pairs for which the results_complete.csv file is missing some instances.
+This is due to the corresponding model being unable to provide a forecast for these instances.
+When aggregating the RCRPS, all such missing instances are assumed to have a RCPRS of 5 (the cap we apply to it in the aggregation).
+
 Column descriptions for the results_complete.csv file:
 
 * Model: Which model has been used for these results, included whether Direct Prompt or LLMP was used.
