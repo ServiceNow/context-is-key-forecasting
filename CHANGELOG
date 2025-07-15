@@ -1,3 +1,3 @@
 Changes in the benchmark since its ICML 2025 release
 
-* Scaled the values of the X_0 covariate shown in the context of the FullCausalContextImplicitEquationBivarLinSVAR and FullCausalContextExplicitEquationBivarLinSVAR, using the same scaling coefficient used for the other values and the time series. This lack of scaling made the equation describing the relation between X_1 and X_0 in FullCausalContextExplicitEquationBivarLinSVAR incorrect.
+* July 11, 2025: Scaled the values of the X_0 covariate shown in the context of the FullCausalContextImplicitEquationBivarLinSVAR and FullCausalContextExplicitEquationBivarLinSVAR, using the same scaling coefficient used for the other values and the time series. This lack of scaling made the equation describing the relation between X_1 and X_0 in FullCausalContextExplicitEquationBivarLinSVAR incorrect.
