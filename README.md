@@ -6,6 +6,7 @@
 🌟 [Contributors](#contributors) -
 📝 [Citation](#citing-this-work) -
 📦 [ICML 2025 Release](https://github.com/ServiceNow/context-is-key-forecasting/tree/v1.0.0)
+📊 [Official Results](#official-results)
 
 ![poster](https://github.com/user-attachments/assets/523ae60a-6c3d-42bf-80b8-83e23d8e7ab0)
 
@@ -17,10 +18,12 @@
 * **Experiments:** Code used to run the experiments can be found [here](./experiments).
 
 
-## Aggregated results
+## Official results
 
 Here are the updated aggregated benchmark results (equivalent to Table 1 in the paper).
 The full experimental results can also be found [here](./results/results_complete.csv).
+
+This table holds for the version of the benchmark as of July 11th, 2025.
 See the [CHANGELOG](./CHANGELOG) for how the benchmark was updated since the ICML 2025 release.
 
 |                                         | Average RCPRS   | Intemporal Information   | Historical Information   | Future Information   | Covariate Information   | Causal Information   |
