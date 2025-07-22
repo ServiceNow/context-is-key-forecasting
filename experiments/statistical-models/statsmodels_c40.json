@@ -1,3 +1,6 @@
 [
-    {"label": "Statsmodels", "method": "statsmodels"}
+    {
+        "label": "Statsmodels",
+        "method": "statsmodels"
+    }
 ]
