@@ -1,6 +1,6 @@
 # Context is Key: A Benchmark for Forecasting with Essential Textual Information
 
-📄 [Paper](https://arxiv.org/abs/2410.18959) -
+📄 [Paper (ICML 2025)](https://arxiv.org/abs/2410.18959) -
 🌐 [Website](https://servicenow.github.io/context-is-key-forecasting) -
 ✉️ [Contact](mailto:arjun.ashok@servicenow.com,andrew.williams1@servicenow.com,alexandre.drouin@servicenow.com) -
 🌟 [Contributors](#contributors) -
@@ -84,13 +84,12 @@ Here is a list of all environment variables which the Context-is-Key benchmark w
 
 Please cite the following paper:
 ```
-@misc{williams2024contextkeybenchmarkforecasting,
-      title={Context is Key: A Benchmark for Forecasting with Essential Textual Information}, 
-      author={Andrew Robert Williams and Arjun Ashok and Étienne Marcotte and Valentina Zantedeschi and Jithendaraa Subramanian and Roland Riachi and James Requeima and Alexandre Lacoste and Irina Rish and Nicolas Chapados and Alexandre Drouin},
-      year={2024},
-      eprint={2410.18959},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2410.18959}, 
+@inproceedings{
+williams2025context,
+title={Context is Key: A Benchmark for Forecasting with Essential Textual Information},
+author={Andrew Robert Williams and Arjun Ashok and {\'E}tienne Marcotte and Valentina Zantedeschi and Jithendaraa Subramanian and Roland Riachi and James Requeima and Alexandre Lacoste and Irina Rish and Nicolas Chapados and Alexandre Drouin},
+booktitle={Forty-second International Conference on Machine Learning},
+year={2025},
+url={https://openreview.net/forum?id=ih2WuBT1Fn}
 }
 ```
