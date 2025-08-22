@@ -2,6 +2,7 @@
 Direct prompt method
 
 """
+
 import inspect
 import logging
 import numpy as np
@@ -96,23 +97,35 @@ def huggingface_instruct_model_client(
 
     def constrained_decoding_regex(required_timestamps):
         """
-        Generates a regular expression to force the model output
-        to satisfy the required format and provide values for
-        all required timestamps
-
+        Generates a regex pattern for constrained decoding such that:
+        - <forecast> occurs at start (on its own line).
+        - For each required timestamp ts, the model must produce
+            (ts,NUMBER)
+            with NO extra whitespace, exactly as shown:
+            open paren, timestamp literal, comma, numeric value, close paren
+        - Then </forecast> at the end (on its own line).
         """
-        timestamp_regex = "".join(
-            [
-                r"\(\s*{}\s*,\s*[-+]?\d+(\.\d+)?\)\n".format(re.escape(ts))
-                for ts in required_timestamps
-            ]
-        )
-        return r"<forecast>\n{}<\/forecast>".format(timestamp_regex)
+
+        # Build one pattern line per required timestamp:
+        #   (YYYY-MM-DD HH:MM:SS,[-+]?\d+(?:\.\d+)?)
+        # No spaces allowed anywhere, so everything is literally "fixed"
+        # except for the numeric portion.
+        lines = [
+            rf"\({re.escape(ts)},[-+]?\d{1,20}(?:\.\d{0,20})?\)"
+            for ts in required_timestamps
+        ]
+
+        # Join lines with exactly one "\n".
+        body = r"\n".join(lines)
+
+        # Return the full pattern, ensuring a single newline
+        # after <forecast> and before </forecast>.
+        return rf"<forecast>\n{body}\n</forecast>"
 
     # Make generation pipeline
     pipe = pipeline(
         task="text-generation",
-        model=llm,
+        model=llm.cuda().to(torch.bfloat16),
         tokenizer=tokenizer,
         device_map="auto",
     )
@@ -124,19 +137,55 @@ def huggingface_instruct_model_client(
     )
 
     # Now extract the assistant's reply
-    choices = []
-    for response in pipe(
-        [messages] * n,
-        max_length=max_tokens,
-        temperature=temperature,
-        prefix_allowed_tokens_fn=prefix_function,
-        batch_size=n,
-    ):
-        # Create a message object
-        message = SimpleNamespace(content=response[0]["generated_text"][-1]["content"])
-        # Create a choice object
-        choice = SimpleNamespace(message=message)
-        choices.append(choice)
+
+    # TODO: verify
+    # if pipe has no chat_template, get the context from the messages and append it to the prompt.
+    # then complete the prompt with the model
+    if getattr(pipe.tokenizer, "chat_template", None) is not None:
+        start_time = time.time()
+        choices = []
+        for response in pipe(
+            [messages] * n,
+            max_length=max_tokens,
+            temperature=temperature,
+            prefix_allowed_tokens_fn=prefix_function,
+            batch_size=n,
+        ):
+            # Create a message object
+            message = SimpleNamespace(
+                content=response[0]["generated_text"][-1]["content"]
+            )
+            # Create a choice object
+            choice = SimpleNamespace(message=message)
+            choices.append(choice)
+        print(f"Time taken for completion: {time.time() - start_time}")
+
+    else:
+        # Get the context from the messages
+        context = ""
+        for message in messages:
+            context += message["content"] + " "  # directly concatenate the context
+
+        # Generate completions
+        choices = []
+        start_time = time.time()
+        responses = pipe(
+            [context] * n,
+            temperature=temperature,
+            prefix_allowed_tokens_fn=prefix_function,
+            batch_size=n,
+            max_new_tokens=max_tokens,
+        )
+        print(f"Time taken for completion: {time.time() - start_time}")
+
+        for response in responses:
+            # Create a message object
+            message = SimpleNamespace(
+                content=response[0]["generated_text"][len(context) :].strip()
+            )
+            # Create a choice object
+            choice = SimpleNamespace(message=message)
+            choices.append(choice)
 
     # Create a usage object (we can estimate tokens)
     usage = SimpleNamespace(
