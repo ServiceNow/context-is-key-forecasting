@@ -63,7 +63,7 @@ class ChronosForecaster(Baseline):
         start_inference = time.time()
         # num_series, num_samples, num_timesteps
         model_preds = pipeline.predict(
-            context=hist_values,
+            inputs=hist_values,
             prediction_length=len(task_instance.future_time),
             num_samples=n_samples,
             limit_prediction_length=False,
