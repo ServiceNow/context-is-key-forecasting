@@ -19,5 +19,6 @@ termcolor
 tenacity
 h5py
 transformers>4.4.1
+tokenizers
 sentencepiece
 lm-format-enforcer
